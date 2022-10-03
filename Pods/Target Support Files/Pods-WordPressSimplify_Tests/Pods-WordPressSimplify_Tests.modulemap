@@ -1,6 +1,0 @@
-framework module Pods_WordPressSimplify_Tests {
-  umbrella header "Pods-WordPressSimplify_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
