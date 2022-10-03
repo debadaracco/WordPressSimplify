@@ -1,0 +1,6 @@
+framework module Pods_WordPressSimplify_Example {
+  umbrella header "Pods-WordPressSimplify_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

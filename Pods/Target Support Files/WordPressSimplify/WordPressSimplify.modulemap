@@ -1,0 +1,6 @@
+framework module WordPressSimplify {
+  umbrella header "WordPressSimplify-umbrella.h"
+
+  export *
+  module * { export * }
+}

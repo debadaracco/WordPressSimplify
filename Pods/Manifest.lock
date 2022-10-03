@@ -1,0 +1,16 @@
+PODS:
+  - WordPressSimplify (0.1.0)
+
+DEPENDENCIES:
+  - WordPressSimplify (from `./`)
+
+EXTERNAL SOURCES:
+  WordPressSimplify:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  WordPressSimplify: e8e53304edfe0c8f40ebb4aa3d4a6627d5d181d2
+
+PODFILE CHECKSUM: 6e0359f589aadaf0dc0b630d93fda783d3bcac2f
+
+COCOAPODS: 1.11.2
