@@ -24,7 +24,7 @@ jobs:
           command: bundle install
       - run:
           name: Running Pod Install
-          command: bundle pod install
+          command: bundle exec pod install
       - run:
           name: Running Tests
           command: fastlane scan --workspace "WordPressSimplify.xcworkspace" --scheme "WordPressSimplify-Example" --device "iPhone 14" --clean
