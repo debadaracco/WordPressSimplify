@@ -6,7 +6,7 @@ xcodeproj: WordPressSimplify.xcodeproj
 workspace: WordPressSimplify.xcworkspace
 source_directory: Source/**/*.swift
 output_directory: .coverage
-#binary_basename: WordPressSimplify_Example
+binary_basename: WordPressSimplify
 #ignore:
   #- Example/*
   #- Pods/*
