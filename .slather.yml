@@ -1,0 +1,12 @@
+# .slather.yml
+
+coverage_service: cobertura_xml
+scheme: WordPressSimplify-Example
+xcodeproj: WordPressSimplify.xcodeproj
+workspace: WordPressSimplify.xcworkspace
+source_directory: Source/**/*.swift
+output_directory: .coverage
+binary_basename: WordPressSimplify
+#ignore:
+  #- Example/*
+  #- Pods/*
