@@ -1,6 +1,7 @@
 # WordPressSimplify
 
-[![CI Status](https://img.shields.io/travis/Diego Badaracco/WordPressSimplify.svg?style=flat)](https://travis-ci.org/Diego Badaracco/WordPressSimplify)
+[![CircleCI](https://circleci.com/gh/debadaracco/WordPressSimplify/tree/master.svg?style=shield)](https://circleci.com/gh/debadaracco/WordPressSimplify/?branch=master)
+[![codecov](https://codecov.io/gh/debadaracco/WordPressSimplify/branch/master/graph/badge.svg?token=2BBCDB5XB4)](https://codecov.io/gh/debadaracco/WordPressSimplify)
 [![Version](https://img.shields.io/cocoapods/v/WordPressSimplify.svg?style=flat)](https://cocoapods.org/pods/WordPressSimplify)
 [![License](https://img.shields.io/cocoapods/l/WordPressSimplify.svg?style=flat)](https://cocoapods.org/pods/WordPressSimplify)
 [![Platform](https://img.shields.io/cocoapods/p/WordPressSimplify.svg?style=flat)](https://cocoapods.org/pods/WordPressSimplify)
