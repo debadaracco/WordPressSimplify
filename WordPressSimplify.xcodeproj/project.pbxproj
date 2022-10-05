@@ -71,6 +71,7 @@
 		F4B00A1D28EA8B9900DE51A4 /* WPUserRequestFiltersTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPUserRequestFiltersTest.swift; sourceTree = "<group>"; };
 		F4B00A1E28EA8B9900DE51A4 /* WPUserRepositoryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPUserRepositoryTest.swift; sourceTree = "<group>"; };
 		F4B00A2928EA8BD100DE51A4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F4DA24AD28ED249A00BC93EA /* .codecov.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .codecov.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +200,7 @@
 				F41B9CBB28EA960C00E6855A /* .circleci */,
 				F41B9CBD28EA960C00E6855A /* .slather.yml */,
 				F41B9CBE28EA960C00E6855A /* .swiftlint.yml */,
+				F4DA24AD28ED249A00BC93EA /* .codecov.yml */,
 			);
 			name = Deployment;
 			sourceTree = "<group>";
