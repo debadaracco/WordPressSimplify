@@ -15,10 +15,13 @@ enum Constants {
         static let search = "search"
         static let exclude = "exclude"
         static let include = "include"
+        static let hideEmpty = "hide_empty"
         static let offset = "offset"
         static let order = "order"
         static let orderBy = "orderby"
         static let slug =  "slug"
+        static let post =  "post"
+        static let parent =  "parent"
         static let fields = "_fields"
     }
 }

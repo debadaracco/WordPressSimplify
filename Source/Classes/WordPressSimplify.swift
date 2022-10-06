@@ -9,6 +9,7 @@ import Foundation
 
 public class WordPressSimplify {
     fileprivate let wpUserRepository: WPUserRepositoryProtocol
+    fileprivate let wpCategoryRepository: WPCategoryRepositoryProtocol
 
     public init(
         baseURL: String,
@@ -19,6 +20,7 @@ public class WordPressSimplify {
             clientStrategy: networkingClientStrategy ?? WPDefaultNetworkingClient()
         )
         self.wpUserRepository = WPUserRepository(networking: networking)
+        self.wpCategoryRepository = WPCategoryRepository(networking: networking)
     }
 
     public func fetchUsers<T: WPUserModel> (
@@ -38,7 +40,35 @@ public class WordPressSimplify {
         fields: [WPRequestField.UserFields] = [WPRequestField.UserFields](),
         completion: @escaping (Result<T, Error>) -> Void
     ) {
-        self.wpUserRepository.fetch(id: id, fields: fields, completion: completion)
+        self.wpUserRepository.fetch(
+            id: id,
+            fields: fields,
+            completion: completion
+        )
+    }
+
+    public func fetchCategories<T: WPCategoryModel> (
+        filters: [WPRequestFilter.ListCategory] = [WPRequestFilter.ListCategory](),
+        fields: [WPRequestField.CategoryFields] = [WPRequestField.CategoryFields](),
+        completion: @escaping (Result<[T], Error>) -> Void
+    ) {
+        self.wpCategoryRepository.fetch(
+            filters: filters,
+            fields: fields,
+            completion: completion
+        )
+    }
+
+    public func fetchCategory<T: WPCategoryModel>(
+        id: Int,
+        fields: [WPRequestField.CategoryFields] = [WPRequestField.CategoryFields](),
+        completion: @escaping (Result<T, Error>) -> Void
+    ) {
+        self.wpCategoryRepository.fetch(
+            id: id,
+            fields: fields,
+            completion: completion
+        )
     }
 }
 
@@ -61,5 +91,27 @@ extension WordPressSimplify {
         completion: @escaping (Result<WPUser, Error>) -> Void
     ) {
         self.wpUserRepository.fetch(id: id, fields: fields, completion: completion)
+    }
+}
+
+extension WordPressSimplify {
+    public func fetchCategories(
+        filters: [WPRequestFilter.ListCategory] = [WPRequestFilter.ListCategory](),
+        fields: [WPRequestField.CategoryFields] = [WPRequestField.CategoryFields](),
+        completion: @escaping (Result<[WPCategory], Error>) -> Void
+    ) {
+        self.wpCategoryRepository.fetch(
+            filters: filters,
+            fields: fields,
+            completion: completion
+        )
+    }
+
+    public func fetchCategory(
+        id: Int,
+        fields: [WPRequestField.CategoryFields] = [WPRequestField.CategoryFields](),
+        completion: @escaping (Result<WPCategory, Error>) -> Void
+    ) {
+        self.wpCategoryRepository.fetch(id: id, fields: fields, completion: completion)
     }
 }
