@@ -48,4 +48,4 @@ Diego Badaracco, debadaracco@gmail.com
 
 ## License
 
-WordPressSimplify is available under the MIT license. See the LICENSE file for more info.
+WordPressSimplify is available under the GPL-3.0 license. See the LICENSE file for more info.
