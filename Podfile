@@ -8,6 +8,7 @@ project 'WordPressSimplify.xcodeproj'
 target 'WordPressSimplify_Example' do
   pod 'WordPressSimplify', :path => './'
   pod "UIScrollView-InfiniteScroll"
+  pod "Alamofire"
   
   target 'WordPressSimplify_Tests' do
     inherit! :search_paths

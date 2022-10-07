@@ -10,6 +10,20 @@ import WordPressSimplify
 import UIScrollView_InfiniteScroll
 
 class DetailViewController: UIViewController {
+    enum RestClients: String, CaseIterable {
+        case alamofire
+        case ´default´
+        
+        var wpNetworkingClientStrategy: WPNetworkingClientStrategy? {
+            switch self {
+            case .´default´:
+                return nil
+            case .alamofire:
+                return AlamofireWPNetworkingImp()
+            }
+        }
+        
+    }
     enum WPType: String, CaseIterable {
         case categories
         case pages
@@ -19,6 +33,7 @@ class DetailViewController: UIViewController {
     }
     var baseURL: String!
     var wpType: WPType!
+    var restClient: RestClients = .´default´
     private var wordpressSimplify: WordPressSimplify!
     @IBOutlet weak var tableView: UITableView!
     private var items: [ContentListeable] = [ContentListeable]()
@@ -38,7 +53,10 @@ class DetailViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = UITableView.automaticDimension
-        self.wordpressSimplify = WordPressSimplify(baseURL: self.baseURL)
+        self.wordpressSimplify = WordPressSimplify(
+            baseURL: self.baseURL,
+            networkingClientStrategy: self.restClient.wpNetworkingClientStrategy
+        )
         
         self.tableView.refreshControl = self.refreshControl
         self.tableView.addSubview(self.refreshControl)

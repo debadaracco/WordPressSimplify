@@ -44,6 +44,7 @@
 		F4DDA0B228F00D0C0031EA96 /* fetch_pages_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F4DDA0B028F00D0C0031EA96 /* fetch_pages_1.json */; };
 		F4DDA0B328F00D0C0031EA96 /* fetch_page_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F4DDA0B128F00D0C0031EA96 /* fetch_page_1.json */; };
 		F4DDA0B528F00DD00031EA96 /* WPCustomPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDA0B428F00DD00031EA96 /* WPCustomPageModel.swift */; };
+		F4EFE1D828F01B9E002893C4 /* AlamofireNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EFE1D728F01B9E002893C4 /* AlamofireNetworking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		F4DDA0B028F00D0C0031EA96 /* fetch_pages_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_pages_1.json; sourceTree = "<group>"; };
 		F4DDA0B128F00D0C0031EA96 /* fetch_page_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_page_1.json; sourceTree = "<group>"; };
 		F4DDA0B428F00DD00031EA96 /* WPCustomPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCustomPageModel.swift; sourceTree = "<group>"; };
+		F4EFE1D728F01B9E002893C4 /* AlamofireNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				F4EFE1D728F01B9E002893C4 /* AlamofireNetworking.swift */,
 			);
 			name = "Example for WordPressSimplify";
 			path = Example/WordPressSimplify;
@@ -496,11 +499,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WordPressSimplify_Example/Pods-WordPressSimplify_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/UIScrollView-InfiniteScroll/UIScrollView_InfiniteScroll.framework",
 				"${BUILT_PRODUCTS_DIR}/WordPressSimplify/WordPressSimplify.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIScrollView_InfiniteScroll.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WordPressSimplify.framework",
 			);
@@ -557,6 +562,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4EFE1D828F01B9E002893C4 /* AlamofireNetworking.swift in Sources */,
 				F4B00A2A28EA8BD100DE51A4 /* DetailViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
