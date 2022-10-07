@@ -1,5 +1,5 @@
 //
-//  WPCustomCategoryModel.swift
+//  WPCustomTagModel.swift
 //  WordPressSimplify_Tests
 //
 //  Created by Diego Badaracco on 07/10/2022.
@@ -7,11 +7,9 @@
 //
 
 import Foundation
-
-import Foundation
 import WordPressSimplify
 
-struct WPCustomCategoryModel: WPCategoryModel {
+struct WPCustomTagModel: WPTagModel {
     let id: Int
     let count: Int
     let description: String
@@ -19,5 +17,5 @@ struct WPCustomCategoryModel: WPCategoryModel {
     let name: String
     let slug: String
     let taxonomy: String
-    let parent: Int
 }
+
