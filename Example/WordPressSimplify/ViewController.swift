@@ -10,6 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     fileprivate let elements = DetailViewController.WPType.allCases
 
+    fileprivate var selectedRestClient = DetailViewController.RestClients.´default´
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var baseURLTextField: UITextField!
 
@@ -29,6 +31,7 @@ class ViewController: UIViewController {
 
             if let sender = sender as? DetailViewController.WPType {
                 detail.wpType = sender
+                detail.restClient = self.selectedRestClient
             }
         }
     }
@@ -45,6 +48,19 @@ class ViewController: UIViewController {
         }
 
         return true
+    }
+    @IBAction func restClientTap(_ sender: Any) {
+        let actionSheet = UIAlertController(title: "Rest Client", message: "Select Rest Client", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Alamofire", style: .default, handler: { [weak wSelf = self] action in
+            wSelf?.selectedRestClient = .alamofire
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Default", style: .default, handler: { [weak wSelf = self] action in
+            wSelf?.selectedRestClient = .´default´
+        }))
+        
+        self.present(actionSheet, animated: true)
     }
 }
 

@@ -479,18 +479,18 @@ final class WordPressSimplifyTests: XCTestCase {
                     XCTAssertEqual(post.slug, "title_\(idx + 1)")
                     XCTAssertEqual(post.status, .publish)
                     XCTAssertEqual(post.type, "post")
-                    XCTAssertNotNil(post.title.rendered)
-                    XCTAssertNotNil(post.content.rendered)
+                    XCTAssertNotNil(post.title?.rendered)
+                    XCTAssertNotNil(post.content?.rendered)
                     XCTAssertEqual(post.author, 1)
-                    XCTAssertNotNil(post.excerpt.rendered)
+                    XCTAssertNotNil(post.excerpt?.rendered)
                     XCTAssertEqual(post.featured_media, 1)
                     XCTAssertEqual(post.comment_status, .open)
                     XCTAssertEqual(post.ping_status, .closed)
                     XCTAssertEqual(post.format, .standard)
-                    XCTAssertFalse(post.sticky)
+                    XCTAssertTrue(post.sticky == false)
                     XCTAssertEqual(post.template, "")
-                    XCTAssertEqual(post.categories.count, 1)
-                    XCTAssertEqual(post.tags.count, 1)
+                    XCTAssertEqual(post.categories?.count, 1)
+                    XCTAssertEqual(post.tags?.count, 1)
                 }
             }
         }
@@ -528,18 +528,18 @@ final class WordPressSimplifyTests: XCTestCase {
                 XCTAssertEqual(post.slug, "test_1")
                 XCTAssertEqual(post.status, .publish)
                 XCTAssertEqual(post.type, "post")
-                XCTAssertNotNil(post.title.rendered)
-                XCTAssertNotNil(post.content.rendered)
+                XCTAssertNotNil(post.title?.rendered)
+                XCTAssertNotNil(post.content?.rendered)
                 XCTAssertEqual(post.author, 1)
-                XCTAssertNotNil(post.excerpt.rendered)
+                XCTAssertNotNil(post.excerpt?.rendered)
                 XCTAssertEqual(post.featured_media, 1)
                 XCTAssertEqual(post.comment_status, .open)
                 XCTAssertEqual(post.ping_status, .closed)
                 XCTAssertEqual(post.format, .standard)
-                XCTAssertFalse(post.sticky)
+                XCTAssertTrue(post.sticky == false)
                 XCTAssertEqual(post.template, "")
-                XCTAssertEqual(post.categories.count, 1)
-                XCTAssertEqual(post.tags.count, 1)
+                XCTAssertEqual(post.categories?.count, 1)
+                XCTAssertEqual(post.tags?.count, 1)
             }
         }
     }
@@ -578,18 +578,18 @@ final class WordPressSimplifyTests: XCTestCase {
                     XCTAssertEqual(post.slug, "title_\(idx + 1)")
                     XCTAssertEqual(post.status, .publish)
                     XCTAssertEqual(post.type, "post")
-                    XCTAssertNotNil(post.title.rendered)
-                    XCTAssertNotNil(post.content.rendered)
+                    XCTAssertNotNil(post.title?.rendered)
+                    XCTAssertNotNil(post.content?.rendered)
                     XCTAssertEqual(post.author, 1)
-                    XCTAssertNotNil(post.excerpt.rendered)
+                    XCTAssertNotNil(post.excerpt?.rendered)
                     XCTAssertEqual(post.featured_media, 1)
                     XCTAssertEqual(post.comment_status, .open)
                     XCTAssertEqual(post.ping_status, .closed)
                     XCTAssertEqual(post.format, .standard)
-                    XCTAssertFalse(post.sticky)
+                    XCTAssertTrue(post.sticky == false)
                     XCTAssertEqual(post.template, "")
-                    XCTAssertEqual(post.categories.count, 1)
-                    XCTAssertEqual(post.tags.count, 1)
+                    XCTAssertEqual(post.categories?.count, 1)
+                    XCTAssertEqual(post.tags?.count, 1)
                 }
             }
         }
@@ -627,18 +627,202 @@ final class WordPressSimplifyTests: XCTestCase {
                 XCTAssertEqual(post.slug, "test_1")
                 XCTAssertEqual(post.status, .publish)
                 XCTAssertEqual(post.type, "post")
-                XCTAssertNotNil(post.title.rendered)
-                XCTAssertNotNil(post.content.rendered)
+                XCTAssertNotNil(post.title?.rendered)
+                XCTAssertNotNil(post.content?.rendered)
                 XCTAssertEqual(post.author, 1)
-                XCTAssertNotNil(post.excerpt.rendered)
+                XCTAssertNotNil(post.excerpt?.rendered)
                 XCTAssertEqual(post.featured_media, 1)
                 XCTAssertEqual(post.comment_status, .open)
                 XCTAssertEqual(post.ping_status, .closed)
                 XCTAssertEqual(post.format, .standard)
-                XCTAssertFalse(post.sticky)
+                XCTAssertTrue(post.sticky == false)
                 XCTAssertEqual(post.template, "")
-                XCTAssertEqual(post.categories.count, 1)
-                XCTAssertEqual(post.tags.count, 1)
+                XCTAssertEqual(post.categories?.count, 1)
+                XCTAssertEqual(post.tags?.count, 1)
+            }
+        }
+    }
+    
+    // MARK: - Pages
+    func testWPS_PageRepository_AllPages_With_Error() throws {
+        let client = WPNetworkingClientMock(localPath: "1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        wps.fetchPages(filters: [], fields: []) { result in
+            switch result {
+            case .failure(let error):
+                let castedError = error as? WPNetworkingClientMock.WPNetworkingClientError
+                XCTAssertTrue(castedError == WPNetworkingClientMock.WPNetworkingClientError.anError)
+            default:
+                XCTAssertTrue(false)
+            }
+        }
+    }
+    
+    func testWPS_PageRepository_AllPages_With_Success() throws {
+        let client = WPNetworkingClientMock(localPath: "fetch_pages_1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        
+        wps.fetchPages(filters: [], fields: []) { (result: Result<[WPPage], Error>) in
+            switch result {
+            case .failure(_ ):
+                XCTAssertTrue(false)
+            case .success(let pages):
+                XCTAssertEqual(pages.count, 4)
+                for (idx, page) in pages.enumerated() {
+                    XCTAssertEqual(page.id, idx + 1)
+                    XCTAssertNotNil(page.date)
+                    XCTAssertNotNil(page.date_gmt)
+                    XCTAssertNotNil(page.guid?.rendered)
+                    XCTAssertEqual(page.link, "https://site.com/test_\(idx + 1)/")
+                    XCTAssertNotNil(page.modified)
+                    XCTAssertNotNil(page.modified_gmt)
+                    XCTAssertEqual(page.slug, "test_\(idx + 1)")
+                    XCTAssertEqual(page.status, .publish)
+                    XCTAssertEqual(page.type, "page")
+                    XCTAssertNotNil(page.title?.rendered)
+                    XCTAssertNotNil(page.content?.rendered)
+                    XCTAssertEqual(page.author, 1)
+                    XCTAssertNotNil(page.excerpt?.rendered)
+                    XCTAssertEqual(page.featured_media, 1)
+                    XCTAssertEqual(page.comment_status, .open)
+                    XCTAssertEqual(page.ping_status, .closed)
+                    XCTAssertEqual(page.template, "")
+                }
+            }
+        }
+    }
+    
+    func testWPS_PageRepository_SpecificPage_With_Error() throws {
+        let client = WPNetworkingClientMock(localPath: "1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        wps.fetchPage(id: 1, fields: []) { result in
+            switch result {
+            case .failure(let error):
+                let castedError = error as? WPNetworkingClientMock.WPNetworkingClientError
+                XCTAssertTrue(castedError == WPNetworkingClientMock.WPNetworkingClientError.anError)
+            default:
+                XCTAssertTrue(false)
+            }
+        }
+    }
+    
+    func testWPS_PageRepository_SpecificPage_With_Success() throws {
+        let client = WPNetworkingClientMock(localPath: "fetch_page_1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        wps.fetchPage(id: 1, fields: []) { (result: Result<WPPage, Error>) in
+            switch result {
+            case .failure(_ ):
+                XCTAssertTrue(false)
+            case .success(let page):
+                XCTAssertEqual(page.id, 1)
+                XCTAssertNotNil(page.date)
+                XCTAssertNotNil(page.date_gmt)
+                XCTAssertNotNil(page.guid?.rendered)
+                XCTAssertEqual(page.link, "https://site.com/test_1/")
+                XCTAssertNotNil(page.modified)
+                XCTAssertNotNil(page.modified_gmt)
+                XCTAssertEqual(page.slug, "test_1")
+                XCTAssertEqual(page.status, .publish)
+                XCTAssertEqual(page.type, "page")
+                XCTAssertNotNil(page.title?.rendered)
+                XCTAssertNotNil(page.content?.rendered)
+                XCTAssertEqual(page.author, 1)
+                XCTAssertNotNil(page.excerpt?.rendered)
+                XCTAssertEqual(page.featured_media, 1)
+                XCTAssertEqual(page.comment_status, .open)
+                XCTAssertEqual(page.ping_status, .closed)
+                XCTAssertEqual(page.template, "")
+            }
+        }
+    }
+    
+    func testWPS_PageRepository_AllPages_WithCustomModel_And_Error() throws {
+        let client = WPNetworkingClientMock(localPath: "1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        wps.fetchPages(filters: [], fields: []) { (result: Result<[WPCustomPageModel], Error>) in
+            switch result {
+            case .failure(let error):
+                let castedError = error as? WPNetworkingClientMock.WPNetworkingClientError
+                XCTAssertTrue(castedError == WPNetworkingClientMock.WPNetworkingClientError.anError)
+            default:
+                XCTAssertTrue(false)
+            }
+        }
+    }
+    
+    func testWPS_PageRepository_AllPages_WithCustomModel_And_Success() throws {
+        let client = WPNetworkingClientMock(localPath: "fetch_pages_1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        wps.fetchPages(filters: [], fields: []) { (result: Result<[WPCustomPageModel], Error>) in
+            switch result {
+            case .failure(_ ):
+                XCTAssertTrue(false)
+            case .success(let pages):
+                XCTAssertEqual(pages.count, 4)
+                for (idx, page) in pages.enumerated() {
+                    XCTAssertEqual(page.id, idx + 1)
+                    XCTAssertNotNil(page.date)
+                    XCTAssertNotNil(page.date_gmt)
+                    XCTAssertNotNil(page.guid?.rendered)
+                    XCTAssertEqual(page.link, "https://site.com/test_\(idx + 1)/")
+                    XCTAssertNotNil(page.modified)
+                    XCTAssertNotNil(page.modified_gmt)
+                    XCTAssertEqual(page.slug, "test_\(idx + 1)")
+                    XCTAssertEqual(page.status, .publish)
+                    XCTAssertEqual(page.type, "page")
+                    XCTAssertNotNil(page.title?.rendered)
+                    XCTAssertNotNil(page.content?.rendered)
+                    XCTAssertEqual(page.author, 1)
+                    XCTAssertNotNil(page.excerpt?.rendered)
+                    XCTAssertEqual(page.featured_media, 1)
+                    XCTAssertEqual(page.comment_status, .open)
+                    XCTAssertEqual(page.ping_status, .closed)
+                    XCTAssertEqual(page.template, "")
+                }
+            }
+        }
+    }
+    
+    func testWPS_PageRepository_UserPage_WithCustomModel_And_Error() throws {
+        let client = WPNetworkingClientMock(localPath: "1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        wps.fetchPage(id: 1, fields: []) { (result: Result<WPCustomPageModel, Error>) in
+            switch result {
+            case .failure(let error):
+                let castedError = error as? WPNetworkingClientMock.WPNetworkingClientError
+                XCTAssertTrue(castedError == WPNetworkingClientMock.WPNetworkingClientError.anError)
+            default:
+                XCTAssertTrue(false)
+            }
+        }
+    }
+    
+    func testWPS_PageRepository_UserPage_WithCustomModel_And_Success() throws {
+        let client = WPNetworkingClientMock(localPath: "fetch_page_1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        wps.fetchPage(id: 1, fields: []) { (result: Result<WPCustomPageModel, Error>) in
+            switch result {
+            case .failure(_ ):
+                XCTAssertTrue(false)
+            case .success(let page):
+                XCTAssertEqual(page.id, 1)
+                XCTAssertNotNil(page.date)
+                XCTAssertNotNil(page.date_gmt)
+                XCTAssertNotNil(page.guid?.rendered)
+                XCTAssertEqual(page.link, "https://site.com/test_1/")
+                XCTAssertNotNil(page.modified)
+                XCTAssertNotNil(page.modified_gmt)
+                XCTAssertEqual(page.slug, "test_1")
+                XCTAssertEqual(page.status, .publish)
+                XCTAssertEqual(page.type, "page")
+                XCTAssertNotNil(page.title?.rendered)
+                XCTAssertNotNil(page.content?.rendered)
+                XCTAssertEqual(page.author, 1)
+                XCTAssertNotNil(page.excerpt?.rendered)
+                XCTAssertEqual(page.featured_media, 1)
+                XCTAssertEqual(page.comment_status, .open)
+                XCTAssertEqual(page.ping_status, .closed)
+                XCTAssertEqual(page.template, "")
             }
         }
     }

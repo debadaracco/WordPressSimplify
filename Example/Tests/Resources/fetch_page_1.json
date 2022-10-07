@@ -1,0 +1,32 @@
+{
+    "id": 1,
+    "date": "2018-07-30T19:42:39",
+    "date_gmt": "2018-07-30T22:42:39",
+    "guid": {
+        "rendered": "https://site.com/test-1/"
+    },
+    "modified": "2022-08-29T23:18:21",
+    "modified_gmt": "2022-08-30T02:18:21",
+    "slug": "test-1",
+    "status": "publish",
+    "type": "page",
+    "link": "https://site.com/test-1/",
+    "title": {
+        "rendered": "Informe Especial"
+    },
+    "content": {
+        "rendered": "<p>test-1</p>\n",
+        "protected": false
+    },
+    "excerpt": {
+        "rendered": "test-1",
+        "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": ""
+}

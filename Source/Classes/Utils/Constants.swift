@@ -16,7 +16,7 @@ enum Constants {
         static let after = "after"
         static let before = "before"
         static let author = "author"
-        static let authorsExclude = "authors_exclude"
+        static let authorExclude = "author_exclude"
         static let status = "status"
         static let taxRelation = "tax_relation"
         static let categories = "categories"
@@ -26,6 +26,7 @@ enum Constants {
         static let sticky = "sticky"
         static let exclude = "exclude"
         static let include = "include"
+        static let menuOrder = "menu_order"
         static let hideEmpty = "hide_empty"
         static let offset = "offset"
         static let order = "order"
@@ -33,6 +34,7 @@ enum Constants {
         static let slug =  "slug"
         static let post =  "post"
         static let parent =  "parent"
+        static let parentExclude = "parent_exclude"
         static let fields = "_fields"
     }
 }

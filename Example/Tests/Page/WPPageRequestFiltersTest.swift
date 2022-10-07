@@ -1,5 +1,5 @@
 //
-//  WPPostRequestFiltersTest.swift
+//  WPPageRequestFiltersTest.swift
 //  WordPressSimplify_Tests
 //
 //  Created by Diego Badaracco on 07/10/2022.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import WordPressSimplify
 
-final class WPPostRequestFiltersTest: XCTestCase {
+final class WPPageRequestFiltersTest: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -19,8 +19,8 @@ final class WPPostRequestFiltersTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testListPostFilters() throws {
-        let filters: [WPRequestFilter.ListPost] = [
+    func testListPageFilters() throws {
+        let filters: [WPRequestFilter.ListPage] = [
             .context(type: .view),
             .page(number: 1),
             .perPage(number: 1),
@@ -36,12 +36,10 @@ final class WPPostRequestFiltersTest: XCTestCase {
             .orderBy(type: .id),
             .slug(slugs: ["test"]),
             .status(value: .publish),
-            .taxRelation(value: .AND),
-            .categories(ids: [1,2]),
-            .categoriesExclude(ids: [1,2]),
-            .tags(ids: [1,2]),
-            .tagsExclude(ids: [1,2]),
-            .sticky
+            .menuOrder(value: 1),
+            .parent(ids: [1,2]),
+            .parentExclude(ids: [1,2])
+
         ]
         let queryItems = (filters as [WPRequestFilterProtocol]).makeQueryItems()
         XCTAssertEqual(queryItems[0].name, "context")
@@ -89,27 +87,19 @@ final class WPPostRequestFiltersTest: XCTestCase {
         XCTAssertEqual(queryItems[14].name, "status")
         XCTAssertEqual(queryItems[14].value, "publish")
         
-        XCTAssertEqual(queryItems[15].name, "tax_relation")
-        XCTAssertEqual(queryItems[15].value, "AND")
+        XCTAssertEqual(queryItems[15].name, "menu_order")
+        XCTAssertEqual(queryItems[15].value, "1")
         
-        XCTAssertEqual(queryItems[16].name, "categories")
+        XCTAssertEqual(queryItems[16].name, "parent")
         XCTAssertEqual(queryItems[16].value, "1,2")
         
-        XCTAssertEqual(queryItems[17].name, "categories_exclude")
+        XCTAssertEqual(queryItems[17].name, "parent_exclude")
         XCTAssertEqual(queryItems[17].value, "1,2")
         
-        XCTAssertEqual(queryItems[18].name, "tags")
-        XCTAssertEqual(queryItems[18].value, "1,2")
-        
-        XCTAssertEqual(queryItems[19].name, "tags_exclude")
-        XCTAssertEqual(queryItems[19].value, "1,2")
-        
-        XCTAssertEqual(queryItems[20].name, "sticky")
-        XCTAssertEqual(queryItems[20].value, "1")
     }
     
-    func testListPostFilters_With_EmptyList() throws {
-        let filters = [WPRequestFilter.ListPost.search(value: "")]
+    func testListPageFilters_With_EmptyList() throws {
+        let filters = [WPRequestFilter.ListPage.search(value: "")]
         let queryItems = (filters as [WPRequestFilterProtocol]).makeQueryItems()
         XCTAssertTrue(queryItems.isEmpty)
     }

@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WordPressSimplify_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,13 @@
                             <constraint firstItem="lNp-9a-Hnp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="yfR-nC-i9K"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="c7K-DE-u7h"/>
+                    <navigationItem key="navigationItem" id="c7K-DE-u7h">
+                        <barButtonItem key="rightBarButtonItem" title="Rest Client" id="kb8-XE-wYY">
+                            <connections>
+                                <action selector="restClientTap:" destination="BYZ-38-t0r" id="V98-gB-k71"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="baseURLTextField" destination="lNp-9a-Hnp" id="6xp-y4-Vpy"/>
                         <outlet property="tableView" destination="xst-8O-PPb" id="AJu-P2-0SN"/>
@@ -64,7 +70,7 @@
         <!--Detail View Controller-->
         <scene sceneID="Hrc-lN-CFd">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="G9P-FU-JXm" customClass="DetailViewController" customModule="iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="G9P-FU-JXm" customClass="DetailViewController" customModule="WordPressSimplify_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aUp-RQ-cq8">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

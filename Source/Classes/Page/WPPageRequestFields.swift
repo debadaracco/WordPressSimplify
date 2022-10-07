@@ -1,5 +1,5 @@
 //
-//  WPPostRequestFields.swift
+//  WPPageRequestFields.swift
 //  WordPressSimplify
 //
 //  Created by Diego Badaracco on 07/10/2022.
@@ -8,7 +8,7 @@
 import Foundation
 
 public extension WPRequestField {
-    enum PostFields: String, CaseIterable, WPRequestFieldTypeProtocol {
+    enum PageFields: String, CaseIterable, WPRequestFieldTypeProtocol {
         case id
         case date
         case dateGmt = "date_gmt"
@@ -19,6 +19,7 @@ public extension WPRequestField {
         case slug
         case status
         case type
+        case parent
         case title
         case content
         case author
@@ -26,11 +27,8 @@ public extension WPRequestField {
         case featuredMedia = "featured_media"
         case commentStatus = "comment_status"
         case pingStatus = "ping_status"
-        case format
-        case sticky
+        case menuOrder = "menu_order"
         case template
-        case categories
-        case tags
 
         var fieldValue: String {
             self.rawValue
