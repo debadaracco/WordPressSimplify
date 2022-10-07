@@ -11,6 +11,7 @@ public class WordPressSimplify {
     fileprivate let wpUserRepository: WPUserRepositoryProtocol
     fileprivate let wpCategoryRepository: WPCategoryRepositoryProtocol
     fileprivate let wpTagsRepository: WPTagRepositoryProtocol
+    fileprivate let wpPostRepository: WPPostRepositoryProtocol
 
     public init(
         baseURL: String,
@@ -23,6 +24,7 @@ public class WordPressSimplify {
         self.wpUserRepository = WPUserRepository(networking: networking)
         self.wpCategoryRepository = WPCategoryRepository(networking: networking)
         self.wpTagsRepository = WPTagRepository(networking: networking)
+        self.wpPostRepository = WPPostRepository(networking: networking)
     }
 }
 
@@ -120,7 +122,7 @@ extension WordPressSimplify {
     }
 }
 
-// MARK: - Categories
+// MARK: - Tags
 extension WordPressSimplify {
     public func fetchTags<T: WPTagModel>(
         filters: [WPRequestFilter.ListTag] = [WPRequestFilter.ListTag](),
@@ -164,6 +166,57 @@ extension WordPressSimplify {
         completion: @escaping (Result<WPTag, Error>) -> Void
     ) {
         self.wpTagsRepository.fetch(
+            id: id,
+            fields: fields,
+            completion: completion
+        )
+    }
+}
+
+// MARK: - Posts
+extension WordPressSimplify {
+    public func fetchPosts<T: WPPostModel>(
+        filters: [WPRequestFilter.ListPost] = [WPRequestFilter.ListPost](),
+        fields: [WPRequestField.PostFields] = [WPRequestField.PostFields](),
+        completion: @escaping (Result<[T], Error>) -> Void
+    ) {
+        self.wpPostRepository.fetch(
+            filters: filters,
+            fields: fields,
+            completion: completion
+        )
+    }
+
+    public func fetchPost<T: WPPostModel>(
+        id: Int,
+        fields: [WPRequestField.PostFields] = [WPRequestField.PostFields](),
+        completion: @escaping (Result<T, Error>) -> Void
+    ) {
+        self.wpPostRepository.fetch(
+            id: id,
+            fields: fields,
+            completion: completion
+        )
+    }
+
+    public func fetchPosts(
+        filters: [WPRequestFilter.ListPost] = [WPRequestFilter.ListPost](),
+        fields: [WPRequestField.PostFields] = [WPRequestField.PostFields](),
+        completion: @escaping (Result<[WPPost], Error>) -> Void
+    ) {
+        self.wpPostRepository.fetch(
+            filters: filters,
+            fields: fields,
+            completion: completion
+        )
+    }
+
+    public func fetchPost(
+        id: Int,
+        fields: [WPRequestField.PostFields] = [WPRequestField.PostFields](),
+        completion: @escaping (Result<WPPost, Error>) -> Void
+    ) {
+        self.wpPostRepository.fetch(
             id: id,
             fields: fields,
             completion: completion
