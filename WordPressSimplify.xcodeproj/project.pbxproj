@@ -14,6 +14,11 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		90A9FAE3CBE04615CFF8BF25 /* Pods_WordPressSimplify_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB628D0145BBE0D8A031625C /* Pods_WordPressSimplify_Example.framework */; };
 		AFE560A7E2A9E54C213B3A39 /* Pods_WordPressSimplify_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C1FB9A6852D5089047CF09 /* Pods_WordPressSimplify_Tests.framework */; };
+		F4839E0F28EE659B00ED86C5 /* WPCategoryRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4839E0E28EE659B00ED86C5 /* WPCategoryRepositoryTest.swift */; };
+		F4839E1228EE669F00ED86C5 /* fetch_category_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F4839E1028EE669F00ED86C5 /* fetch_category_1.json */; };
+		F4839E1328EE669F00ED86C5 /* fetch_categories_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F4839E1128EE669F00ED86C5 /* fetch_categories_1.json */; };
+		F4839E1528EE67CE00ED86C5 /* WPCategoryRequestFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4839E1428EE67CE00ED86C5 /* WPCategoryRequestFieldTest.swift */; };
+		F4839E1728EE67E100ED86C5 /* WPCategoryRequestFiltersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4839E1628EE67E100ED86C5 /* WPCategoryRequestFiltersTest.swift */; };
 		F4B00A1F28EA8B9900DE51A4 /* WPNetworkingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1028EA8B9900DE51A4 /* WPNetworkingTest.swift */; };
 		F4B00A2028EA8B9900DE51A4 /* WordPressSimplifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1128EA8B9900DE51A4 /* WordPressSimplifyTests.swift */; };
 		F4B00A2128EA8B9900DE51A4 /* WPNetworkingClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1328EA8B9900DE51A4 /* WPNetworkingClientMock.swift */; };
@@ -25,6 +30,7 @@
 		F4B00A2728EA8B9900DE51A4 /* WPUserRequestFiltersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1D28EA8B9900DE51A4 /* WPUserRequestFiltersTest.swift */; };
 		F4B00A2828EA8B9900DE51A4 /* WPUserRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1E28EA8B9900DE51A4 /* WPUserRepositoryTest.swift */; };
 		F4B00A2A28EA8BD100DE51A4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A2928EA8BD100DE51A4 /* DetailViewController.swift */; };
+		F4DDA06428EFCEA80031EA96 /* WPCustomCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDA06328EFCEA80031EA96 /* WPCustomCategoryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +65,11 @@
 		F41B9CBC28EA960C00E6855A /* config.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = config.yml; sourceTree = "<group>"; };
 		F41B9CBD28EA960C00E6855A /* .slather.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .slather.yml; sourceTree = "<group>"; };
 		F41B9CBE28EA960C00E6855A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		F4839E0E28EE659B00ED86C5 /* WPCategoryRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCategoryRepositoryTest.swift; sourceTree = "<group>"; };
+		F4839E1028EE669F00ED86C5 /* fetch_category_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_category_1.json; sourceTree = "<group>"; };
+		F4839E1128EE669F00ED86C5 /* fetch_categories_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_categories_1.json; sourceTree = "<group>"; };
+		F4839E1428EE67CE00ED86C5 /* WPCategoryRequestFieldTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCategoryRequestFieldTest.swift; sourceTree = "<group>"; };
+		F4839E1628EE67E100ED86C5 /* WPCategoryRequestFiltersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCategoryRequestFiltersTest.swift; sourceTree = "<group>"; };
 		F4B00A0E28EA8B9900DE51A4 /* WordPressSimplify_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordPressSimplify_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4B00A1028EA8B9900DE51A4 /* WPNetworkingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPNetworkingTest.swift; sourceTree = "<group>"; };
 		F4B00A1128EA8B9900DE51A4 /* WordPressSimplifyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPressSimplifyTests.swift; sourceTree = "<group>"; };
@@ -72,6 +83,7 @@
 		F4B00A1E28EA8B9900DE51A4 /* WPUserRepositoryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPUserRepositoryTest.swift; sourceTree = "<group>"; };
 		F4B00A2928EA8BD100DE51A4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F4DA24AD28ED249A00BC93EA /* .codecov.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .codecov.yml; sourceTree = "<group>"; };
+		F4DDA06328EFCEA80031EA96 /* WPCustomCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCustomCategoryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +165,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				F4839E0D28EE645E00ED86C5 /* Category */,
 				F4B00A1928EA8B9900DE51A4 /* Extensions */,
 				F4B00A1228EA8B9900DE51A4 /* Mocks */,
 				F4B00A1728EA8B9900DE51A4 /* Models */,
@@ -213,6 +226,16 @@
 			path = .circleci;
 			sourceTree = "<group>";
 		};
+		F4839E0D28EE645E00ED86C5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F4839E0E28EE659B00ED86C5 /* WPCategoryRepositoryTest.swift */,
+				F4839E1428EE67CE00ED86C5 /* WPCategoryRequestFieldTest.swift */,
+				F4839E1628EE67E100ED86C5 /* WPCategoryRequestFiltersTest.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		F4B00A0F28EA8B9900DE51A4 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +255,8 @@
 		F4B00A1428EA8B9900DE51A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F4839E1128EE669F00ED86C5 /* fetch_categories_1.json */,
+				F4839E1028EE669F00ED86C5 /* fetch_category_1.json */,
 				F4B00A1528EA8B9900DE51A4 /* fetch_users_1.json */,
 				F4B00A1628EA8B9900DE51A4 /* fetch_user_1.json */,
 			);
@@ -242,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				F4B00A1828EA8B9900DE51A4 /* WPCustomUserModel.swift */,
+				F4DDA06328EFCEA80031EA96 /* WPCustomCategoryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -364,6 +390,8 @@
 			files = (
 				F4B00A2228EA8B9900DE51A4 /* fetch_users_1.json in Resources */,
 				F4B00A2328EA8B9900DE51A4 /* fetch_user_1.json in Resources */,
+				F4839E1328EE669F00ED86C5 /* fetch_categories_1.json in Resources */,
+				F4839E1228EE669F00ED86C5 /* fetch_category_1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,8 +500,12 @@
 			files = (
 				F4B00A2628EA8B9900DE51A4 /* WPUserRequestFieldTest.swift in Sources */,
 				F4B00A2428EA8B9900DE51A4 /* WPCustomUserModel.swift in Sources */,
+				F4839E1728EE67E100ED86C5 /* WPCategoryRequestFiltersTest.swift in Sources */,
+				F4DDA06428EFCEA80031EA96 /* WPCustomCategoryModel.swift in Sources */,
+				F4839E1528EE67CE00ED86C5 /* WPCategoryRequestFieldTest.swift in Sources */,
 				F4B00A2528EA8B9900DE51A4 /* ArrayExtensionTest.swift in Sources */,
 				F4B00A2828EA8B9900DE51A4 /* WPUserRepositoryTest.swift in Sources */,
+				F4839E0F28EE659B00ED86C5 /* WPCategoryRepositoryTest.swift in Sources */,
 				F4B00A2128EA8B9900DE51A4 /* WPNetworkingClientMock.swift in Sources */,
 				F4B00A2728EA8B9900DE51A4 /* WPUserRequestFiltersTest.swift in Sources */,
 				F4B00A2028EA8B9900DE51A4 /* WordPressSimplifyTests.swift in Sources */,

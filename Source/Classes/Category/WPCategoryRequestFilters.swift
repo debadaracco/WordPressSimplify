@@ -28,8 +28,8 @@ public extension WPRequestFilter {
         case exclude(ids: [Int])
         case include(ids: [Int])
         case hideEmpty
-        case parent(value: String)
-        case post(value: String)
+        case parent(value: Int)
+        case post(value: Int)
         case order(type: Order)
         case orderBy(type: OrderBy)
         case slug(slugs: [String])
@@ -78,7 +78,7 @@ public extension WPRequestFilter {
             case .include(let ids):
                 return ids.makeQueryItemValue()
             case .hideEmpty:
-                return "true"
+                return "1"
             case .order(let type):
                 return type.rawValue
             case .orderBy(let type):
@@ -86,9 +86,9 @@ public extension WPRequestFilter {
             case .slug(let slugs):
                 return slugs.makeQueryItemValue()
             case .post(let value):
-                return value
+                return "\(value)"
             case .parent(let value):
-                return value
+                return "\(value)"
             }
         }
     }
