@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.social_media_url = "https://twitter.com/debadaracco"
   s.default_subspec  = 'Classes'
   
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
 
   #s.source_files = 'Source/**/*.swift'
   s.subspec 'Classes' do |ss|
