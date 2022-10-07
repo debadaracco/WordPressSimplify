@@ -32,7 +32,8 @@ final class WPTagRequestFiltersTest: XCTestCase {
             .order(type: .asc),
             .orderBy(type: .id),
             .slug(slugs: ["slug1"]),
-            .offset(number: 1)
+            .offset(number: 1),
+            .custom(key: "key", value: "value")
         ]
         let queryItems = (filters as [WPRequestFilterProtocol]).makeQueryItems()
         XCTAssertEqual(queryItems[0].name, "context")
@@ -59,6 +60,8 @@ final class WPTagRequestFiltersTest: XCTestCase {
         XCTAssertEqual(queryItems[10].value, "slug1")
         XCTAssertEqual(queryItems[11].name, "offset")
         XCTAssertEqual(queryItems[11].value, "1")
+        XCTAssertEqual(queryItems[12].name, "key")
+        XCTAssertEqual(queryItems[12].value, "value")
     }
     
     func testListTagFilters_With_EmptyList() throws {

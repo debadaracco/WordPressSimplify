@@ -8,14 +8,14 @@
 import Foundation
 
 public extension WPRequestField {
-    enum PageFields: String, CaseIterable, WPRequestFieldTypeProtocol {
+    enum PageFields: WPRequestFieldTypeProtocol {
         case id
         case date
-        case dateGmt = "date_gmt"
+        case dateGmt
         case guid
         case link
         case modified
-        case modifiedGmt = "modified_gmt"
+        case modifiedGmt
         case slug
         case status
         case type
@@ -24,14 +24,58 @@ public extension WPRequestField {
         case content
         case author
         case excerpt
-        case featuredMedia = "featured_media"
-        case commentStatus = "comment_status"
-        case pingStatus = "ping_status"
-        case menuOrder = "menu_order"
+        case featuredMedia
+        case commentStatus
+        case pingStatus
+        case menuOrder
         case template
+        case custom(field: String)
 
         var fieldValue: String {
-            self.rawValue
+            switch self {
+            case .id:
+                return "id"
+            case .date:
+                return "date"
+            case .dateGmt:
+                return "date_gmt"
+            case .guid:
+                return "guid"
+            case .link:
+                return "link"
+            case .modified:
+                return "modified"
+            case .modifiedGmt:
+                return "modified_gmt"
+            case .slug:
+                return "slug"
+            case .status:
+                return "status"
+            case .type:
+                return "type"
+            case .parent:
+                return "parent"
+            case .title:
+                return "title"
+            case .content:
+                return "content"
+            case .author:
+                return "author"
+            case .excerpt:
+                return "excerpt"
+            case .featuredMedia:
+                return "featured_media"
+            case .commentStatus:
+                return "comment_status"
+            case .pingStatus:
+                return "ping_status"
+            case .menuOrder:
+                return "menu_order"
+            case .template:
+                return "template"
+            case .custom(let field):
+                return field
+            }
         }
     }
 }

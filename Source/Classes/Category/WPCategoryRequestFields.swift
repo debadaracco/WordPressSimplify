@@ -8,7 +8,7 @@
 import Foundation
 
 public extension WPRequestField {
-    enum CategoryFields: String, CaseIterable, WPRequestFieldTypeProtocol {
+    enum CategoryFields: WPRequestFieldTypeProtocol {
         case id
         case count
         case description
@@ -17,9 +17,29 @@ public extension WPRequestField {
         case slug
         case taxonomy
         case parent
+        case custom(field: String)
 
         var fieldValue: String {
-            self.rawValue
+            switch self {
+            case .id:
+                return "id"
+            case .count:
+                return "count"
+            case .description:
+                return "description"
+            case .link:
+                return "link"
+            case .name:
+                return "name"
+            case .slug:
+                return "slug"
+            case .taxonomy:
+                return "taxonomy"
+            case .parent:
+                return "parent"
+            case .custom(let field):
+                return field
+            }
         }
     }
 }

@@ -41,7 +41,8 @@ final class WPPostRequestFiltersTest: XCTestCase {
             .categoriesExclude(ids: [1,2]),
             .tags(ids: [1,2]),
             .tagsExclude(ids: [1,2]),
-            .sticky
+            .sticky,
+            .custom(key: "key", value: "value")
         ]
         let queryItems = (filters as [WPRequestFilterProtocol]).makeQueryItems()
         XCTAssertEqual(queryItems[0].name, "context")
@@ -106,6 +107,9 @@ final class WPPostRequestFiltersTest: XCTestCase {
         
         XCTAssertEqual(queryItems[20].name, "sticky")
         XCTAssertEqual(queryItems[20].value, "1")
+        
+        XCTAssertEqual(queryItems[21].name, "key")
+        XCTAssertEqual(queryItems[21].value, "value")
     }
     
     func testListPostFilters_With_EmptyList() throws {

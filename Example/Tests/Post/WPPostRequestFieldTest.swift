@@ -48,7 +48,8 @@ final class WPPostRequestFieldTest: XCTestCase {
             WPRequestField.PostFields.sticky,
             WPRequestField.PostFields.template,
             WPRequestField.PostFields.categories,
-            WPRequestField.PostFields.tags
+            WPRequestField.PostFields.tags,
+            WPRequestField.PostFields.custom(field: "field")
         ]
         
         let queryItems = fields.makeQueryItem()
@@ -58,7 +59,7 @@ final class WPPostRequestFieldTest: XCTestCase {
         XCTAssertEqual(queryItems!.value, fields.valueQueryItem)
         XCTAssertEqual(
             queryItems!.value,
-            "id,date,date_gmt,guid,link,modified,modified_gmt,slug,status,type,title,content,author,excerpt,featured_media,comment_status,ping_status,format,sticky,template,categories,tags"
+            "id,date,date_gmt,guid,link,modified,modified_gmt,slug,status,type,title,content,author,excerpt,featured_media,comment_status,ping_status,format,sticky,template,categories,tags,field"
         )
     }
 }

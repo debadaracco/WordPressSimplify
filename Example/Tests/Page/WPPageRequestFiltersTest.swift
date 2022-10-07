@@ -38,7 +38,8 @@ final class WPPageRequestFiltersTest: XCTestCase {
             .status(value: .publish),
             .menuOrder(value: 1),
             .parent(ids: [1,2]),
-            .parentExclude(ids: [1,2])
+            .parentExclude(ids: [1,2]),
+            .custom(key: "key", value: "value")
 
         ]
         let queryItems = (filters as [WPRequestFilterProtocol]).makeQueryItems()
@@ -96,6 +97,8 @@ final class WPPageRequestFiltersTest: XCTestCase {
         XCTAssertEqual(queryItems[17].name, "parent_exclude")
         XCTAssertEqual(queryItems[17].value, "1,2")
         
+        XCTAssertEqual(queryItems[18].name, "key")
+        XCTAssertEqual(queryItems[18].value, "value")
     }
     
     func testListPageFilters_With_EmptyList() throws {

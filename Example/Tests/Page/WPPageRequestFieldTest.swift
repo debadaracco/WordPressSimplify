@@ -47,6 +47,7 @@ final class WPPageRequestFieldTest: XCTestCase {
             WPRequestField.PageFields.pingStatus,
             WPRequestField.PageFields.menuOrder,
             WPRequestField.PageFields.template,
+            WPRequestField.PageFields.custom(field: "field")
         ]
         
         let queryItems = fields.makeQueryItem()
@@ -56,7 +57,7 @@ final class WPPageRequestFieldTest: XCTestCase {
         XCTAssertEqual(queryItems!.value, fields.valueQueryItem)
         XCTAssertEqual(
             queryItems!.value,
-            "id,date,date_gmt,guid,link,modified,modified_gmt,slug,status,type,parent,title,content,author,excerpt,featured_media,comment_status,ping_status,menu_order,template"
+            "id,date,date_gmt,guid,link,modified,modified_gmt,slug,status,type,parent,title,content,author,excerpt,featured_media,comment_status,ping_status,menu_order,template,field"
         )
     }
 

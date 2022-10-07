@@ -49,6 +49,7 @@ public extension WPRequestFilter {
         case tags(ids: [Int])
         case tagsExclude(ids: [Int])
         case sticky
+        case custom(key: String, value: String)
 
         public var nameQueryItem: String {
             switch self {
@@ -94,6 +95,8 @@ public extension WPRequestFilter {
                 return Constants.QueryParamNames.tagsExclude
             case .sticky:
                 return Constants.QueryParamNames.sticky
+            case .custom(let key, _):
+                return key
             }
         }
 
@@ -141,6 +144,8 @@ public extension WPRequestFilter {
                 return ids.makeQueryItemValue()
             case .sticky:
                 return "1"
+            case .custom(_, let value):
+                return value
             }
         }
     }

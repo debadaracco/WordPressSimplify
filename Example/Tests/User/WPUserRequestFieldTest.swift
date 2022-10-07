@@ -37,7 +37,8 @@ final class WPUserRequestFieldTest: XCTestCase {
             WPRequestField.UserFields.link,
             WPRequestField.UserFields.locale,
             WPRequestField.UserFields.nickname,
-            WPRequestField.UserFields.slug
+            WPRequestField.UserFields.slug,
+            WPRequestField.UserFields.custom(field: "field")
         ]
 
         let queryItems = fields.makeQueryItem()
@@ -47,7 +48,7 @@ final class WPUserRequestFieldTest: XCTestCase {
         XCTAssertEqual(queryItems!.value, fields.valueQueryItem)
         XCTAssertEqual(
             queryItems!.value,
-            "id,username,name,first_name,last_name,email,url,description,link,locale,nickname,slug"
+            "id,username,name,first_name,last_name,email,url,description,link,locale,nickname,slug,field"
         )
     }
 }

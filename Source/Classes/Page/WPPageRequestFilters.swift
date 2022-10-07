@@ -46,6 +46,7 @@ public extension WPRequestFilter {
         case parentExclude(ids: [Int])
         case slug(slugs: [String])
         case status(value: WPPublishStatus)
+        case custom(key: String, value: String)
 
         public var nameQueryItem: String {
             switch self {
@@ -85,6 +86,8 @@ public extension WPRequestFilter {
                 return Constants.QueryParamNames.parent
             case .parentExclude(_ ):
                 return Constants.QueryParamNames.parentExclude
+            case .custom(let key, _):
+                return key
             }
         }
 
@@ -126,6 +129,8 @@ public extension WPRequestFilter {
                 return ids.makeQueryItemValue()
             case .parentExclude(ids: let ids):
                 return ids.makeQueryItemValue()
+            case .custom(_, let value):
+                return value
             }
         }
     }

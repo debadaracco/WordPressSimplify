@@ -1,5 +1,9 @@
 # WordPressSimplify
 
+## 1.0.1
+
+- [TR8 - Fix Custom fields and filters](https://trello.com/c/yeymfWuK/8-custom-fields-filters)
+
 ## 1.0.0
 
 - [TR6 - Implement Pages Logic](https://trello.com/c/1rRY622b/6-page)

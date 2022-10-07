@@ -33,6 +33,7 @@ public extension WPRequestFilter {
         case order(type: Order)
         case orderBy(type: OrderBy)
         case slug(slugs: [String])
+        case custom(key: String, value: String)
 
         public var nameQueryItem: String {
             switch self {
@@ -60,6 +61,8 @@ public extension WPRequestFilter {
                 return Constants.QueryParamNames.post
             case .parent(_ ):
                 return Constants.QueryParamNames.parent
+            case .custom(let key, _):
+                return key
             }
         }
 
@@ -89,6 +92,8 @@ public extension WPRequestFilter {
                 return "\(value)"
             case .parent(let value):
                 return "\(value)"
+            case .custom( _, let value):
+                return value
             }
         }
     }

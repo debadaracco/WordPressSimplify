@@ -32,7 +32,8 @@ final class WPCategoryRequestFiltersTest: XCTestCase {
             .post(value: 2),
             .order(type: .asc),
             .orderBy(type: .id),
-            .slug(slugs: ["slug1"])
+            .slug(slugs: ["slug1"]),
+            .custom(key: "key", value: "value")
         ]
         let queryItems = (filters as [WPRequestFilterProtocol]).makeQueryItems()
         XCTAssertEqual(queryItems[0].name, "context")
@@ -59,6 +60,8 @@ final class WPCategoryRequestFiltersTest: XCTestCase {
         XCTAssertEqual(queryItems[10].value, "id")
         XCTAssertEqual(queryItems[11].name, "slug")
         XCTAssertEqual(queryItems[11].value, "slug1")
+        XCTAssertEqual(queryItems[12].name, "key")
+        XCTAssertEqual(queryItems[12].value, "value")
     }
     
     func testListCategoryFilters_With_EmptyList() throws {
