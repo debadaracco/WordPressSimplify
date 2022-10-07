@@ -8,7 +8,23 @@
 import Foundation
 
 public extension WPRequestField {
-    enum UserFields: WPRequestFieldTypeProtocol {
+    enum UserFields: CaseIterable, WPRequestFieldTypeProtocol {
+        public static var allCases: [WPRequestField.UserFields] = [
+            .id,
+            .username,
+            .name,
+            .firstName,
+            .lastName,
+            .email,
+            .url,
+            .description,
+            .link,
+            .locale,
+            .nickname,
+            .slug,
+            .custom(field: "")
+        ]
+
         case id
         case username
         case name

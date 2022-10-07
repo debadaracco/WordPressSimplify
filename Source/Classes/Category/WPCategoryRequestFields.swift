@@ -8,7 +8,19 @@
 import Foundation
 
 public extension WPRequestField {
-    enum CategoryFields: WPRequestFieldTypeProtocol {
+    enum CategoryFields: CaseIterable, WPRequestFieldTypeProtocol {
+        public static var allCases: [WPRequestField.CategoryFields] = [
+            .id,
+            .count,
+            .description,
+            .link,
+            .name,
+            .slug,
+            .taxonomy,
+            .parent,
+            .custom(field: "")
+        ]
+
         case id
         case count
         case description

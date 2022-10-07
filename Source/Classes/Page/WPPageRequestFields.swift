@@ -8,7 +8,31 @@
 import Foundation
 
 public extension WPRequestField {
-    enum PageFields: WPRequestFieldTypeProtocol {
+    enum PageFields: CaseIterable, WPRequestFieldTypeProtocol {
+        public static var allCases: [WPRequestField.PageFields] = [
+            .id,
+            .date,
+            .dateGmt,
+            .guid,
+            .link,
+            .modified,
+            .modifiedGmt,
+            .slug,
+            .status,
+            .type,
+            .parent,
+            .title,
+            .content,
+            .author,
+            .excerpt,
+            .featuredMedia,
+            .commentStatus,
+            .pingStatus,
+            .menuOrder,
+            .template,
+            .custom(field: "")
+        ]
+
         case id
         case date
         case dateGmt
