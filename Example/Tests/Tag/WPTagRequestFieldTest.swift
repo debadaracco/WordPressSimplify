@@ -45,8 +45,5 @@ final class WPTagRequestFieldTest: XCTestCase {
             queryItems!.value,
             "id,count,description,link,name,slug,taxonomy"
         )
-        
-        
     }
-
 }

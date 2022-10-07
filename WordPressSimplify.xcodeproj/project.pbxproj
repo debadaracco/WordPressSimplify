@@ -14,7 +14,6 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		90A9FAE3CBE04615CFF8BF25 /* Pods_WordPressSimplify_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB628D0145BBE0D8A031625C /* Pods_WordPressSimplify_Example.framework */; };
 		AFE560A7E2A9E54C213B3A39 /* Pods_WordPressSimplify_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C1FB9A6852D5089047CF09 /* Pods_WordPressSimplify_Tests.framework */; };
-		F4839E0F28EE659B00ED86C5 /* WPCategoryRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4839E0E28EE659B00ED86C5 /* WPCategoryRepositoryTest.swift */; };
 		F4839E1228EE669F00ED86C5 /* fetch_category_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F4839E1028EE669F00ED86C5 /* fetch_category_1.json */; };
 		F4839E1328EE669F00ED86C5 /* fetch_categories_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F4839E1128EE669F00ED86C5 /* fetch_categories_1.json */; };
 		F4839E1528EE67CE00ED86C5 /* WPCategoryRequestFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4839E1428EE67CE00ED86C5 /* WPCategoryRequestFieldTest.swift */; };
@@ -28,15 +27,18 @@
 		F4B00A2528EA8B9900DE51A4 /* ArrayExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1A28EA8B9900DE51A4 /* ArrayExtensionTest.swift */; };
 		F4B00A2628EA8B9900DE51A4 /* WPUserRequestFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1C28EA8B9900DE51A4 /* WPUserRequestFieldTest.swift */; };
 		F4B00A2728EA8B9900DE51A4 /* WPUserRequestFiltersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1D28EA8B9900DE51A4 /* WPUserRequestFiltersTest.swift */; };
-		F4B00A2828EA8B9900DE51A4 /* WPUserRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1E28EA8B9900DE51A4 /* WPUserRepositoryTest.swift */; };
 		F4B00A2A28EA8BD100DE51A4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A2928EA8BD100DE51A4 /* DetailViewController.swift */; };
 		F4DDA06428EFCEA80031EA96 /* WPCustomCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDA06328EFCEA80031EA96 /* WPCustomCategoryModel.swift */; };
 		F4DDA07228EFDD2F0031EA96 /* WPCustomTagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDA07128EFDD2F0031EA96 /* WPCustomTagModel.swift */; };
-		F4DDA07528EFDD9A0031EA96 /* WPTagRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDA07428EFDD9A0031EA96 /* WPTagRepositoryTest.swift */; };
 		F4DDA07728EFDDAC0031EA96 /* WPTagRequestFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDA07628EFDDAC0031EA96 /* WPTagRequestFieldTest.swift */; };
 		F4DDA07928EFDDB70031EA96 /* WPTagRequestFiltersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDA07828EFDDB70031EA96 /* WPTagRequestFiltersTest.swift */; };
 		F4DDA07C28EFDEE20031EA96 /* fetch_tags_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F4DDA07A28EFDEE20031EA96 /* fetch_tags_1.json */; };
 		F4DDA07D28EFDEE20031EA96 /* fetch_tag_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F4DDA07B28EFDEE20031EA96 /* fetch_tag_1.json */; };
+		F4DDA09928EFF4980031EA96 /* WPPostRequestFiltersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDA09828EFF4980031EA96 /* WPPostRequestFiltersTest.swift */; };
+		F4DDA09B28EFF4A40031EA96 /* WPPostRequestFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDA09A28EFF4A40031EA96 /* WPPostRequestFieldTest.swift */; };
+		F4DDA09E28EFF5320031EA96 /* fetch_post_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F4DDA09C28EFF5320031EA96 /* fetch_post_1.json */; };
+		F4DDA09F28EFF5320031EA96 /* fetch_posts_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F4DDA09D28EFF5320031EA96 /* fetch_posts_1.json */; };
+		F4DDA0A128EFFC780031EA96 /* WPCustomPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDA0A028EFFC780031EA96 /* WPCustomPostModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +73,6 @@
 		F41B9CBC28EA960C00E6855A /* config.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = config.yml; sourceTree = "<group>"; };
 		F41B9CBD28EA960C00E6855A /* .slather.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .slather.yml; sourceTree = "<group>"; };
 		F41B9CBE28EA960C00E6855A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		F4839E0E28EE659B00ED86C5 /* WPCategoryRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCategoryRepositoryTest.swift; sourceTree = "<group>"; };
 		F4839E1028EE669F00ED86C5 /* fetch_category_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_category_1.json; sourceTree = "<group>"; };
 		F4839E1128EE669F00ED86C5 /* fetch_categories_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_categories_1.json; sourceTree = "<group>"; };
 		F4839E1428EE67CE00ED86C5 /* WPCategoryRequestFieldTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCategoryRequestFieldTest.swift; sourceTree = "<group>"; };
@@ -86,16 +87,19 @@
 		F4B00A1A28EA8B9900DE51A4 /* ArrayExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTest.swift; sourceTree = "<group>"; };
 		F4B00A1C28EA8B9900DE51A4 /* WPUserRequestFieldTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPUserRequestFieldTest.swift; sourceTree = "<group>"; };
 		F4B00A1D28EA8B9900DE51A4 /* WPUserRequestFiltersTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPUserRequestFiltersTest.swift; sourceTree = "<group>"; };
-		F4B00A1E28EA8B9900DE51A4 /* WPUserRepositoryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPUserRepositoryTest.swift; sourceTree = "<group>"; };
 		F4B00A2928EA8BD100DE51A4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F4DA24AD28ED249A00BC93EA /* .codecov.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .codecov.yml; sourceTree = "<group>"; };
 		F4DDA06328EFCEA80031EA96 /* WPCustomCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCustomCategoryModel.swift; sourceTree = "<group>"; };
 		F4DDA07128EFDD2F0031EA96 /* WPCustomTagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCustomTagModel.swift; sourceTree = "<group>"; };
-		F4DDA07428EFDD9A0031EA96 /* WPTagRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTagRepositoryTest.swift; sourceTree = "<group>"; };
 		F4DDA07628EFDDAC0031EA96 /* WPTagRequestFieldTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTagRequestFieldTest.swift; sourceTree = "<group>"; };
 		F4DDA07828EFDDB70031EA96 /* WPTagRequestFiltersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTagRequestFiltersTest.swift; sourceTree = "<group>"; };
 		F4DDA07A28EFDEE20031EA96 /* fetch_tags_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_tags_1.json; sourceTree = "<group>"; };
 		F4DDA07B28EFDEE20031EA96 /* fetch_tag_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_tag_1.json; sourceTree = "<group>"; };
+		F4DDA09828EFF4980031EA96 /* WPPostRequestFiltersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPPostRequestFiltersTest.swift; sourceTree = "<group>"; };
+		F4DDA09A28EFF4A40031EA96 /* WPPostRequestFieldTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPPostRequestFieldTest.swift; sourceTree = "<group>"; };
+		F4DDA09C28EFF5320031EA96 /* fetch_post_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_post_1.json; sourceTree = "<group>"; };
+		F4DDA09D28EFF5320031EA96 /* fetch_posts_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_posts_1.json; sourceTree = "<group>"; };
+		F4DDA0A028EFFC780031EA96 /* WPCustomPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCustomPostModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,7 @@
 				F4B00A1228EA8B9900DE51A4 /* Mocks */,
 				F4B00A1728EA8B9900DE51A4 /* Models */,
 				F4B00A0F28EA8B9900DE51A4 /* Networking */,
+				F4DDA09528EFF4760031EA96 /* Post */,
 				F4B00A1428EA8B9900DE51A4 /* Resources */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				F4DDA07328EFDD810031EA96 /* Tag */,
@@ -242,7 +247,6 @@
 		F4839E0D28EE645E00ED86C5 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				F4839E0E28EE659B00ED86C5 /* WPCategoryRepositoryTest.swift */,
 				F4839E1428EE67CE00ED86C5 /* WPCategoryRequestFieldTest.swift */,
 				F4839E1628EE67E100ED86C5 /* WPCategoryRequestFiltersTest.swift */,
 			);
@@ -270,6 +274,8 @@
 			children = (
 				F4DDA07B28EFDEE20031EA96 /* fetch_tag_1.json */,
 				F4DDA07A28EFDEE20031EA96 /* fetch_tags_1.json */,
+				F4DDA09C28EFF5320031EA96 /* fetch_post_1.json */,
+				F4DDA09D28EFF5320031EA96 /* fetch_posts_1.json */,
 				F4839E1128EE669F00ED86C5 /* fetch_categories_1.json */,
 				F4839E1028EE669F00ED86C5 /* fetch_category_1.json */,
 				F4B00A1528EA8B9900DE51A4 /* fetch_users_1.json */,
@@ -284,6 +290,7 @@
 				F4B00A1828EA8B9900DE51A4 /* WPCustomUserModel.swift */,
 				F4DDA06328EFCEA80031EA96 /* WPCustomCategoryModel.swift */,
 				F4DDA07128EFDD2F0031EA96 /* WPCustomTagModel.swift */,
+				F4DDA0A028EFFC780031EA96 /* WPCustomPostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -301,7 +308,6 @@
 			children = (
 				F4B00A1C28EA8B9900DE51A4 /* WPUserRequestFieldTest.swift */,
 				F4B00A1D28EA8B9900DE51A4 /* WPUserRequestFiltersTest.swift */,
-				F4B00A1E28EA8B9900DE51A4 /* WPUserRepositoryTest.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -309,11 +315,19 @@
 		F4DDA07328EFDD810031EA96 /* Tag */ = {
 			isa = PBXGroup;
 			children = (
-				F4DDA07428EFDD9A0031EA96 /* WPTagRepositoryTest.swift */,
 				F4DDA07628EFDDAC0031EA96 /* WPTagRequestFieldTest.swift */,
 				F4DDA07828EFDDB70031EA96 /* WPTagRequestFiltersTest.swift */,
 			);
 			path = Tag;
+			sourceTree = "<group>";
+		};
+		F4DDA09528EFF4760031EA96 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				F4DDA09828EFF4980031EA96 /* WPPostRequestFiltersTest.swift */,
+				F4DDA09A28EFF4A40031EA96 /* WPPostRequestFieldTest.swift */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,7 +430,9 @@
 			files = (
 				F4B00A2228EA8B9900DE51A4 /* fetch_users_1.json in Resources */,
 				F4B00A2328EA8B9900DE51A4 /* fetch_user_1.json in Resources */,
+				F4DDA09E28EFF5320031EA96 /* fetch_post_1.json in Resources */,
 				F4839E1328EE669F00ED86C5 /* fetch_categories_1.json in Resources */,
+				F4DDA09F28EFF5320031EA96 /* fetch_posts_1.json in Resources */,
 				F4DDA07D28EFDEE20031EA96 /* fetch_tag_1.json in Resources */,
 				F4DDA07C28EFDEE20031EA96 /* fetch_tags_1.json in Resources */,
 				F4839E1228EE669F00ED86C5 /* fetch_category_1.json in Resources */,
@@ -527,16 +543,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4DDA07228EFDD2F0031EA96 /* WPCustomTagModel.swift in Sources */,
+				F4DDA09928EFF4980031EA96 /* WPPostRequestFiltersTest.swift in Sources */,
+				F4DDA0A128EFFC780031EA96 /* WPCustomPostModel.swift in Sources */,
 				F4B00A2628EA8B9900DE51A4 /* WPUserRequestFieldTest.swift in Sources */,
 				F4B00A2428EA8B9900DE51A4 /* WPCustomUserModel.swift in Sources */,
 				F4839E1728EE67E100ED86C5 /* WPCategoryRequestFiltersTest.swift in Sources */,
 				F4DDA06428EFCEA80031EA96 /* WPCustomCategoryModel.swift in Sources */,
+				F4DDA09B28EFF4A40031EA96 /* WPPostRequestFieldTest.swift in Sources */,
 				F4839E1528EE67CE00ED86C5 /* WPCategoryRequestFieldTest.swift in Sources */,
 				F4DDA07728EFDDAC0031EA96 /* WPTagRequestFieldTest.swift in Sources */,
 				F4B00A2528EA8B9900DE51A4 /* ArrayExtensionTest.swift in Sources */,
-				F4B00A2828EA8B9900DE51A4 /* WPUserRepositoryTest.swift in Sources */,
-				F4839E0F28EE659B00ED86C5 /* WPCategoryRepositoryTest.swift in Sources */,
-				F4DDA07528EFDD9A0031EA96 /* WPTagRepositoryTest.swift in Sources */,
 				F4B00A2128EA8B9900DE51A4 /* WPNetworkingClientMock.swift in Sources */,
 				F4B00A2728EA8B9900DE51A4 /* WPUserRequestFiltersTest.swift in Sources */,
 				F4DDA07928EFDDB70031EA96 /* WPTagRequestFiltersTest.swift in Sources */,
