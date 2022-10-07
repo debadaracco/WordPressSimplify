@@ -11,13 +11,24 @@ import UIScrollView_InfiniteScroll
 
 class DetailViewController: UIViewController {
     enum WPType: String, CaseIterable {
-        case user
+        case users
+        case categories
     }
     var baseURL: String!
     var wpType: WPType!
     private var wordpressSimplify: WordPressSimplify!
     @IBOutlet weak var tableView: UITableView!
     private var items: [ContentListeable] = [ContentListeable]()
+    
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(
+            self,
+            action: #selector(DetailViewController.pullToRefresh(_:)),
+            for: .valueChanged
+        )
+        return refreshControl
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +36,11 @@ class DetailViewController: UIViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = UITableView.automaticDimension
         self.wordpressSimplify = WordPressSimplify(baseURL: self.baseURL)
+        
+        self.tableView.refreshControl = self.refreshControl
+        self.tableView.addSubview(self.refreshControl)
+        self.refreshControl.beginRefreshing()
+        
         self.tableView.addInfiniteScroll { [weak wSelf = self] _ in
             guard let sSelf = wSelf else {
                 return
@@ -32,49 +48,85 @@ class DetailViewController: UIViewController {
             sSelf.loadMoreData()
         }
         self.title = self.wpType.rawValue.capitalized
+        
         self.loadData()
     }
 
+    @objc func pullToRefresh(_ sender: Any) {
+        self.loadData()
+    }
     private func loadData() {
         let page = 1
         let perPage = 30
         switch self.wpType {
-        case .user:
+        case .users:
             self.wordpressSimplify.fetchUsers(
                 filters: [
                     .page(number: page),
                     .perPage(number: perPage)
                 ],
-                completion: self.complete
+                completion: self.onLoadDataComplete
+            )
+        case .categories:
+            self.wordpressSimplify.fetchCategories(
+                filters: [
+                    .page(number: page),
+                    .perPage(number: perPage)
+                ],
+                completion: self.onLoadDataComplete
             )
         case .none:
             break
         }
     }
 
+    func onLoadDataComplete<T: ContentListeable>(_ result: Result<[T], Error>) {
+        self.tableView.refreshControl?.endRefreshing()
+        switch result {
+        case .success(let items):
+            self.items = items
+            self.tableView.reloadData()
+        case .failure(let error):
+            self.showError(error)
+        }
+    }
+    
     private func loadMoreData() {
         let perPage = 30
         let page = (self.items.count / perPage) + 1
+        
+        if self.items.count < perPage {
+            self.tableView.finishInfiniteScroll()
+            return
+        }
+        
         switch self.wpType {
-        case .user:
+        case .users:
             self.wordpressSimplify.fetchUsers(
                 filters: [
                     .page(number: page),
                     .perPage(number: perPage)
-                ]
-            ) { [weak wSelf = self] result in
-                wSelf?.tableView.finishInfiniteScroll()
-                wSelf?.complete(result)
-            }
+                ],
+                completion: self.onLoadMoreComplete
+            )
+        case .categories:
+            self.wordpressSimplify.fetchCategories(
+                filters: [
+                    .page(number: page),
+                    .perPage(number: perPage)
+                ],
+                completion: self.onLoadMoreComplete
+            )
         case .none:
             break
         }
     }
 
-    func complete(_ result: Result<[WPUser], Error>) {
+    func onLoadMoreComplete<T: ContentListeable>(_ result: Result<[T], Error>) {
+        self.tableView.finishInfiniteScroll()
         switch result {
-        case .success(let users):
-            self.items.append(contentsOf: users)
+        case .success(let items):
+            self.items.append(contentsOf: items)
             self.tableView.reloadData()
         case .failure(let error):
             self.showError(error)
@@ -110,6 +162,12 @@ protocol ContentListeable {
 }
 
 extension WPUser: ContentListeable {
+    var listeableTitle: String {
+        return self.name
+    }
+}
+
+extension WPCategory: ContentListeable {
     var listeableTitle: String {
         return self.name
     }

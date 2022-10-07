@@ -8,7 +8,7 @@
 import Foundation
 
 public extension WPRequestField {
-    enum UserFields: String, CaseIterable {
+    enum UserFields: String, CaseIterable, WPRequestFieldTypeProtocol {
         case id
         case username
         case name
@@ -21,13 +21,9 @@ public extension WPRequestField {
         case locale
         case nickname
         case slug
-    }
-}
 
-extension Array: WPRequestFieldProtocol where Element == WPRequestField.UserFields {
-    var valueQueryItem: String {
-        return self.map { field in
-            field.rawValue
-        }.makeQueryItemValue()
+        var fieldValue: String {
+            self.rawValue
+        }
     }
 }

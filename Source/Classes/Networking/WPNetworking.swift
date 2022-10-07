@@ -36,7 +36,7 @@ protocol WPNetworkingProtocol {
     func get<T: Decodable>(
         path: String,
         filters: [WPRequestFilterProtocol],
-        fields: WPRequestFieldProtocol,
+        fields: [WPRequestFieldTypeProtocol],
         completion: @escaping (Result<T, Error>) -> Void
     )
 }
@@ -56,7 +56,7 @@ class WPNetworking: WPNetworkingProtocol {
     func get<T: Decodable>(
         path: String,
         filters: [WPRequestFilterProtocol],
-        fields: WPRequestFieldProtocol,
+        fields: [WPRequestFieldTypeProtocol],
         completion: @escaping (Result<T, Error>) -> Void
     ) {
         var urlComponents = URLComponents(string: "\(self.baseURL)\(path)")!

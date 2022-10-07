@@ -19,25 +19,25 @@ final class WPUserRequestFieldTest: XCTestCase {
     }
 
     func testUserRequestField_Without_Fields() throws {
-        let fields = [WPRequestField.UserFields]()
+        let fields: [WPRequestFieldTypeProtocol] = [WPRequestField.UserFields]()
         XCTAssertTrue(fields.valueQueryItem.isEmpty)
         XCTAssertNil(fields.makeQueryItem())
     }
 
     func testUserRequestField_UsingAllFields() throws {
-        let fields: [WPRequestField.UserFields] = [
-            .id,
-            .username,
-            .name,
-            .firstName,
-            .lastName,
-            .email,
-            .url,
-            .description,
-            .link,
-            .locale,
-            .nickname,
-            .slug
+        let fields: [WPRequestFieldTypeProtocol] = [
+            WPRequestField.UserFields.id,
+            WPRequestField.UserFields.username,
+            WPRequestField.UserFields.name,
+            WPRequestField.UserFields.firstName,
+            WPRequestField.UserFields.lastName,
+            WPRequestField.UserFields.email,
+            WPRequestField.UserFields.url,
+            WPRequestField.UserFields.description,
+            WPRequestField.UserFields.link,
+            WPRequestField.UserFields.locale,
+            WPRequestField.UserFields.nickname,
+            WPRequestField.UserFields.slug
         ]
 
         let queryItems = fields.makeQueryItem()
