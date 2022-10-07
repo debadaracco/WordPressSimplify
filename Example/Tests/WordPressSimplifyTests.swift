@@ -297,4 +297,149 @@ final class WordPressSimplifyTests: XCTestCase {
             }
         }
     }
+    
+    
+    // MARK: - Tags
+    func testWPS_TagRepository_AllTags_With_Error() throws {
+        let client = WPNetworkingClientMock(localPath: "1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        wps.fetchTags(filters: [], fields: []) { result in
+            switch result {
+            case .failure(let error):
+                let castedError = error as? WPNetworkingClientMock.WPNetworkingClientError
+                XCTAssertTrue(castedError == WPNetworkingClientMock.WPNetworkingClientError.anError)
+            default:
+                XCTAssertTrue(false)
+            }
+        }
+    }
+    
+    func testWPS_TagRepository_AllTags_With_Success() throws {
+        let client = WPNetworkingClientMock(localPath: "fetch_tags_1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        
+        wps.fetchTags(filters: [], fields: []) { (result: Result<[WPTag], Error>) in
+            switch result {
+            case .failure(_ ):
+                XCTAssertTrue(false)
+            case .success(let tags):
+                XCTAssertEqual(tags.count, 4)
+                for (idx, tag) in tags.enumerated() {
+                    XCTAssertEqual(tag.id, idx + 1)
+                    XCTAssertEqual(tag.count, idx + 1)
+                    XCTAssertEqual(tag.description, "test_\(idx + 1)")
+                    XCTAssertEqual(tag.name, "Test-\(idx + 1)")
+                    XCTAssertEqual(tag.link, "https://test\(idx + 1).com/tag/test\(idx + 1)/")
+                    XCTAssertEqual(tag.slug, "test-\(idx + 1)")
+                    XCTAssertEqual(tag.slug, "test-\(idx + 1)")
+                    XCTAssertEqual(tag.taxonomy, "tag")
+                }
+            }
+        }
+    }
+    
+    func testWPS_TagRepository_SpecificTag_With_Error() throws {
+        let client = WPNetworkingClientMock(localPath: "1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        wps.fetchTag(id: 1, fields: []) { result in
+            switch result {
+            case .failure(let error):
+                let castedError = error as? WPNetworkingClientMock.WPNetworkingClientError
+                XCTAssertTrue(castedError == WPNetworkingClientMock.WPNetworkingClientError.anError)
+            default:
+                XCTAssertTrue(false)
+            }
+        }
+    }
+    
+    func testWPS_TagRepository_SpecificTag_With_Success() throws {
+        let client = WPNetworkingClientMock(localPath: "fetch_tag_1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        wps.fetchTag(id: 1, fields: []) { (result: Result<WPTag, Error>) in
+            switch result {
+            case .failure(_ ):
+                XCTAssertTrue(false)
+            case .success(let tag):
+                XCTAssertEqual(tag.id, 1)
+                XCTAssertEqual(tag.count, 1)
+                XCTAssertEqual(tag.description, "test_1")
+                XCTAssertEqual(tag.name, "Test-1")
+                XCTAssertEqual(tag.link, "https://test1.com/tag/test1/")
+                XCTAssertEqual(tag.slug, "test-1")
+                XCTAssertEqual(tag.slug, "test-1")
+                XCTAssertEqual(tag.taxonomy, "tag")
+            }
+        }
+    }
+    
+    func testWPS_TagRepository_AllTags_WithCustomModel_And_Error() throws {
+        let client = WPNetworkingClientMock(localPath: "1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        wps.fetchTags(filters: [], fields: []) { (result: Result<[WPCustomTagModel], Error>) in
+            switch result {
+            case .failure(let error):
+                let castedError = error as? WPNetworkingClientMock.WPNetworkingClientError
+                XCTAssertTrue(castedError == WPNetworkingClientMock.WPNetworkingClientError.anError)
+            default:
+                XCTAssertTrue(false)
+            }
+        }
+    }
+    
+    func testWPS_TagRepository_AllTags_WithCustomModel_And_Success() throws {
+        let client = WPNetworkingClientMock(localPath: "fetch_tags_1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        wps.fetchTags(filters: [], fields: []) { (result: Result<[WPCustomTagModel], Error>) in
+            switch result {
+            case .failure(_ ):
+                XCTAssertTrue(false)
+            case .success(let tags):
+                XCTAssertEqual(tags.count, 4)
+                for (idx, tag) in tags.enumerated() {
+                    XCTAssertEqual(tag.id, idx + 1)
+                    XCTAssertEqual(tag.count, idx + 1)
+                    XCTAssertEqual(tag.description, "test_\(idx + 1)")
+                    XCTAssertEqual(tag.name, "Test-\(idx + 1)")
+                    XCTAssertEqual(tag.link, "https://test\(idx + 1).com/tag/test\(idx + 1)/")
+                    XCTAssertEqual(tag.slug, "test-\(idx + 1)")
+                    XCTAssertEqual(tag.slug, "test-\(idx + 1)")
+                    XCTAssertEqual(tag.taxonomy, "tag")
+                }
+            }
+        }
+    }
+    
+    func testWPS_TagRepository_UserTag_WithCustomModel_And_Error() throws {
+        let client = WPNetworkingClientMock(localPath: "1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        wps.fetchTag(id: 1, fields: []) { (result: Result<WPCustomTagModel, Error>) in
+            switch result {
+            case .failure(let error):
+                let castedError = error as? WPNetworkingClientMock.WPNetworkingClientError
+                XCTAssertTrue(castedError == WPNetworkingClientMock.WPNetworkingClientError.anError)
+            default:
+                XCTAssertTrue(false)
+            }
+        }
+    }
+    
+    func testWPS_TagRepository_UserTag_WithCustomModel_And_Success() throws {
+        let client = WPNetworkingClientMock(localPath: "fetch_tag_1")
+        let wps = WordPressSimplify(baseURL: "", networkingClientStrategy: client)
+        wps.fetchTag(id: 1, fields: []) { (result: Result<WPCustomTagModel, Error>) in
+            switch result {
+            case .failure(_ ):
+                XCTAssertTrue(false)
+            case .success(let tag):
+                XCTAssertEqual(tag.id, 1)
+                XCTAssertEqual(tag.count, 1)
+                XCTAssertEqual(tag.description, "test_1")
+                XCTAssertEqual(tag.name, "Test-1")
+                XCTAssertEqual(tag.link, "https://test1.com/tag/test1/")
+                XCTAssertEqual(tag.slug, "test-1")
+                XCTAssertEqual(tag.slug, "test-1")
+                XCTAssertEqual(tag.taxonomy, "tag")
+            }
+        }
+    }
 }

@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "count": 1,
+        "description": "test_1",
+        "link": "https://test1.com/tag/test1/",
+        "name": "Test-1",
+        "slug": "test-1",
+        "taxonomy": "tag"
+    },
+    {
+        "id": 2,
+        "count": 2,
+        "description": "test_2",
+        "link": "https://test2.com/tag/test2/",
+        "name": "Test-2",
+        "slug": "test-2",
+        "taxonomy": "tag"
+    },
+    {
+        "id": 3,
+        "count": 3,
+        "description": "test_3",
+        "link": "https://test3.com/tag/test3/",
+        "name": "Test-3",
+        "slug": "test-3",
+        "taxonomy": "tag"
+    },
+    {
+        "id": 4,
+        "count": 4,
+        "description": "test_4",
+        "link": "https://test4.com/tag/test4/",
+        "name": "Test-4",
+        "slug": "test-4",
+        "taxonomy": "tag"
+    }
+]

@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
     enum WPType: String, CaseIterable {
         case users
         case categories
+        case tags
     }
     var baseURL: String!
     var wpType: WPType!
@@ -75,6 +76,14 @@ class DetailViewController: UIViewController {
                 ],
                 completion: self.onLoadDataComplete
             )
+        case .tags:
+            self.wordpressSimplify.fetchTags(
+                filters: [
+                    .page(number: page),
+                    .perPage(number: perPage)
+                ],
+                completion: self.onLoadDataComplete
+            )
         case .none:
             break
         }
@@ -111,6 +120,14 @@ class DetailViewController: UIViewController {
             )
         case .categories:
             self.wordpressSimplify.fetchCategories(
+                filters: [
+                    .page(number: page),
+                    .perPage(number: perPage)
+                ],
+                completion: self.onLoadMoreComplete
+            )
+        case .tags:
+            self.wordpressSimplify.fetchTags(
                 filters: [
                     .page(number: page),
                     .perPage(number: perPage)
@@ -168,6 +185,12 @@ extension WPUser: ContentListeable {
 }
 
 extension WPCategory: ContentListeable {
+    var listeableTitle: String {
+        return self.name
+    }
+}
+
+extension WPTag: ContentListeable {
     var listeableTitle: String {
         return self.name
     }

@@ -1,15 +1,15 @@
 //
-//  WPCategoryRequestFilters.swift
+//  WPTagRequestFilters.swift
 //  WordPressSimplify
 //
-//  Created by Diego Badaracco on 04/10/2022.
+//  Created by Diego Badaracco on 07/10/2022.
 //
 
 import Foundation
 
-// MARK: - ListCategory
+// MARK: - ListTag
 public extension WPRequestFilter {
-    enum ListCategory: WPRequestFilterProtocol {
+    enum ListTag: WPRequestFilterProtocol {
         public enum OrderBy: String {
             case id
             case include
@@ -27,11 +27,11 @@ public extension WPRequestFilter {
         case search(value: String)
         case exclude(ids: [Int])
         case include(ids: [Int])
-        case hideEmpty
-        case parent(value: Int)
-        case post(value: Int)
+        case offset(number: Int)
         case order(type: Order)
         case orderBy(type: OrderBy)
+        case hideEmpty
+        case post(value: Int)
         case slug(slugs: [String])
 
         public var nameQueryItem: String {
@@ -48,6 +48,8 @@ public extension WPRequestFilter {
                 return Constants.QueryParamNames.exclude
             case .include(_ ):
                 return Constants.QueryParamNames.include
+            case .offset(_ ):
+                return Constants.QueryParamNames.offset
             case .hideEmpty:
                 return Constants.QueryParamNames.hideEmpty
             case .order(_ ):
@@ -58,8 +60,6 @@ public extension WPRequestFilter {
                 return Constants.QueryParamNames.slug
             case .post(_ ):
                 return Constants.QueryParamNames.post
-            case .parent(_ ):
-                return Constants.QueryParamNames.parent
             }
         }
 
@@ -87,8 +87,8 @@ public extension WPRequestFilter {
                 return slugs.makeQueryItemValue()
             case .post(let value):
                 return "\(value)"
-            case .parent(let value):
-                return "\(value)"
+            case .offset(let number):
+                return "\(number)"
             }
         }
     }
