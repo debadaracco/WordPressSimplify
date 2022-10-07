@@ -12,12 +12,12 @@ import Foundation
 import WordPressSimplify
 
 struct WPCustomCategoryModel: WPCategoryModel {
-    let id: Int
-    let count: Int
-    let description: String
-    let link: String
-    let name: String
-    let slug: String
-    let taxonomy: String
-    let parent: Int
+    public let id: Int?
+    public let count: Int?
+    public let description: String?
+    public let link: String?
+    public let name: String?
+    public let slug: String?
+    public let taxonomy: String?
+    public let parent: Int?
 }

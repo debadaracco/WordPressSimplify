@@ -1,5 +1,5 @@
 //
-//  WPCustomPostModel.swift
+//  WPCustomPageModel.swift
 //  WordPressSimplify_Tests
 //
 //  Created by Diego Badaracco on 07/10/2022.
@@ -9,7 +9,7 @@
 import Foundation
 import WordPressSimplify
 
-struct WPCustomPostModel: WPPostModel {
+struct WPCustomPageModel: WPPageModel {
     public let id: Int?
     public let date: String?
     public let date_gmt: String?
@@ -20,6 +20,7 @@ struct WPCustomPostModel: WPPostModel {
     public let slug: String?
     public let status: WPPublishStatus?
     public let type: String?
+    public let parent: Int?
     public let title: WPTitle?
     public let content: WPContent?
     public let author: Int?
@@ -27,10 +28,6 @@ struct WPCustomPostModel: WPPostModel {
     public let featured_media: Int?
     public let comment_status: WPCommentStatus?
     public let ping_status: WPPingStatus?
-    public let format: WPPostFormat?
-    public let sticky: Bool?
+    public let menu_order: Int?
     public let template: String?
-    public let categories: [Int]?
-    public let tags: [Int]?
 }
-

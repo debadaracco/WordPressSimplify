@@ -12,6 +12,7 @@ import UIScrollView_InfiniteScroll
 class DetailViewController: UIViewController {
     enum WPType: String, CaseIterable {
         case categories
+        case pages
         case posts
         case tags
         case users
@@ -93,6 +94,15 @@ class DetailViewController: UIViewController {
                 ],
                 completion: self.onLoadDataComplete
             )
+        case .pages:
+            self.wordpressSimplify.fetchPages(
+                filters: [
+                    .page(number: page),
+                    .perPage(number: perPage)
+                ],
+                fields: [.id, .title],
+                completion: self.onLoadDataComplete
+            )
         case .none:
             break
         }
@@ -151,6 +161,15 @@ class DetailViewController: UIViewController {
                 ],
                 completion: self.onLoadMoreComplete
             )
+        case .pages:
+            self.wordpressSimplify.fetchPages(
+                filters: [
+                    .page(number: page),
+                    .perPage(number: perPage)
+                ],
+                fields: [.id, .title],
+                completion: self.onLoadMoreComplete
+            )
         case .none:
             break
         }
@@ -205,18 +224,24 @@ extension WPUser: ContentListeable {
 
 extension WPCategory: ContentListeable {
     var listeableTitle: String {
-        return self.name
+        return self.name ?? ""
     }
 }
 
 extension WPTag: ContentListeable {
     var listeableTitle: String {
-        return self.name
+        return self.name ?? ""
     }
 }
 
 extension WPPost: ContentListeable {
     var listeableTitle: String {
-        return self.title.rendered ?? ""
+        return self.title?.rendered ?? ""
+    }
+}
+
+extension WPPage: ContentListeable {
+    var listeableTitle: String {
+        return self.title?.rendered ?? ""
     }
 }

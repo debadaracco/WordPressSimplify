@@ -1,7 +1,8 @@
 # WordPressSimplify
 
-## X.Y.Z
+## 1.0.0
 
+- [TR6 - Implement Pages Logic](https://trello.com/c/1rRY622b/6-page)
 - [TR5 - Implement Posts Logic](https://trello.com/c/Di7ku1aS/5-post)
 - [TR4 - Implement Tags Logic](https://trello.com/c/I7puReXw/4-tag)
 - [TR3 - Implement Categories Logic](https://trello.com/c/woyiz8pt/3-category)

@@ -1,5 +1,5 @@
 //
-//  WPPostRequestFilters.swift
+//  WPPageRequestFilters.swift
 //  WordPressSimplify
 //
 //  Created by Diego Badaracco on 07/10/2022.
@@ -7,9 +7,8 @@
 
 import Foundation
 
-// MARK: - ListPost
 public extension WPRequestFilter {
-    enum ListPost: WPRequestFilterProtocol {
+    enum ListPage: WPRequestFilterProtocol {
         public enum OrderBy: String {
             case author
             case date
@@ -21,6 +20,7 @@ public extension WPRequestFilter {
             case slug
             case includeSlugs = "include_slugs"
             case title
+            case menuOrder = "menu_order"
         }
 
         public enum WPTaxRelation: String {
@@ -38,17 +38,14 @@ public extension WPRequestFilter {
         case before(dateISO8601: String)
         case exclude(ids: [Int])
         case include(ids: [Int])
+        case menuOrder(value: Int)
         case offset(number: Int)
         case order(type: Order)
         case orderBy(type: OrderBy)
+        case parent(ids: [Int])
+        case parentExclude(ids: [Int])
         case slug(slugs: [String])
         case status(value: WPPublishStatus)
-        case taxRelation(value: WPTaxRelation)
-        case categories(ids: [Int])
-        case categoriesExclude(ids: [Int])
-        case tags(ids: [Int])
-        case tagsExclude(ids: [Int])
-        case sticky
 
         public var nameQueryItem: String {
             switch self {
@@ -72,6 +69,8 @@ public extension WPRequestFilter {
                 return Constants.QueryParamNames.exclude
             case .include(_ ):
                 return Constants.QueryParamNames.include
+            case .menuOrder(_ ):
+                return Constants.QueryParamNames.menuOrder
             case .offset(_ ):
                 return Constants.QueryParamNames.offset
             case .order(_ ):
@@ -82,18 +81,10 @@ public extension WPRequestFilter {
                 return Constants.QueryParamNames.slug
             case .status(_ ):
                 return Constants.QueryParamNames.status
-            case .taxRelation(_ ):
-                return Constants.QueryParamNames.taxRelation
-            case .categories(_ ):
-                return Constants.QueryParamNames.categories
-            case .categoriesExclude(_ ):
-                return Constants.QueryParamNames.categoriesExclude
-            case .tags(_ ):
-                return Constants.QueryParamNames.tags
-            case .tagsExclude(_ ):
-                return Constants.QueryParamNames.tagsExclude
-            case .sticky:
-                return Constants.QueryParamNames.sticky
+            case .parent(_ ):
+                return Constants.QueryParamNames.parent
+            case .parentExclude(_ ):
+                return Constants.QueryParamNames.parentExclude
             }
         }
 
@@ -129,18 +120,12 @@ public extension WPRequestFilter {
                 return dateISO8601
             case .status(value: let value):
                 return value.rawValue
-            case .taxRelation(value: let value):
-                return value.rawValue
-            case .categories(ids: let ids):
+            case .menuOrder(value: let value):
+                return "\(value)"
+            case .parent(ids: let ids):
                 return ids.makeQueryItemValue()
-            case .categoriesExclude(ids: let ids):
+            case .parentExclude(ids: let ids):
                 return ids.makeQueryItemValue()
-            case .tags(ids: let ids):
-                return ids.makeQueryItemValue()
-            case .tagsExclude(ids: let ids):
-                return ids.makeQueryItemValue()
-            case .sticky:
-                return "1"
             }
         }
     }

@@ -12,6 +12,7 @@ public class WordPressSimplify {
     fileprivate let wpCategoryRepository: WPCategoryRepositoryProtocol
     fileprivate let wpTagsRepository: WPTagRepositoryProtocol
     fileprivate let wpPostRepository: WPPostRepositoryProtocol
+    fileprivate let wpPageRepository: WPPageRepositoryProtocol
 
     public init(
         baseURL: String,
@@ -25,6 +26,7 @@ public class WordPressSimplify {
         self.wpCategoryRepository = WPCategoryRepository(networking: networking)
         self.wpTagsRepository = WPTagRepository(networking: networking)
         self.wpPostRepository = WPPostRepository(networking: networking)
+        self.wpPageRepository = WPPageRepository(networking: networking)
     }
 }
 
@@ -217,6 +219,57 @@ extension WordPressSimplify {
         completion: @escaping (Result<WPPost, Error>) -> Void
     ) {
         self.wpPostRepository.fetch(
+            id: id,
+            fields: fields,
+            completion: completion
+        )
+    }
+}
+
+// MARK: - Pages
+extension WordPressSimplify {
+    public func fetchPages<T: WPPageModel>(
+        filters: [WPRequestFilter.ListPage] = [WPRequestFilter.ListPage](),
+        fields: [WPRequestField.PageFields] = [WPRequestField.PageFields](),
+        completion: @escaping (Result<[T], Error>) -> Void
+    ) {
+        self.wpPageRepository.fetch(
+            filters: filters,
+            fields: fields,
+            completion: completion
+        )
+    }
+
+    public func fetchPage<T: WPPageModel>(
+        id: Int,
+        fields: [WPRequestField.PageFields] = [WPRequestField.PageFields](),
+        completion: @escaping (Result<T, Error>) -> Void
+    ) {
+        self.wpPageRepository.fetch(
+            id: id,
+            fields: fields,
+            completion: completion
+        )
+    }
+
+    public func fetchPages(
+        filters: [WPRequestFilter.ListPage] = [WPRequestFilter.ListPage](),
+        fields: [WPRequestField.PageFields] = [WPRequestField.PageFields](),
+        completion: @escaping (Result<[WPPage], Error>) -> Void
+    ) {
+        self.wpPageRepository.fetch(
+            filters: filters,
+            fields: fields,
+            completion: completion
+        )
+    }
+
+    public func fetchPage(
+        id: Int,
+        fields: [WPRequestField.PageFields] = [WPRequestField.PageFields](),
+        completion: @escaping (Result<WPPage, Error>) -> Void
+    ) {
+        self.wpPageRepository.fetch(
             id: id,
             fields: fields,
             completion: completion
