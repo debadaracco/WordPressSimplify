@@ -33,7 +33,8 @@ final class WPTagRequestFieldTest: XCTestCase {
             WPRequestField.TagFields.link,
             WPRequestField.TagFields.name,
             WPRequestField.TagFields.slug,
-            WPRequestField.TagFields.taxonomy
+            WPRequestField.TagFields.taxonomy,
+            WPRequestField.TagFields.custom(field: "field")
         ]
         
         let queryItems = fields.makeQueryItem()
@@ -43,7 +44,7 @@ final class WPTagRequestFieldTest: XCTestCase {
         XCTAssertEqual(queryItems!.value, fields.valueQueryItem)
         XCTAssertEqual(
             queryItems!.value,
-            "id,count,description,link,name,slug,taxonomy"
+            "id,count,description,link,name,slug,taxonomy,field"
         )
     }
 }

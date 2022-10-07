@@ -34,7 +34,8 @@ final class WPCategoryRequestFieldTest: XCTestCase {
             WPRequestField.CategoryFields.name,
             WPRequestField.CategoryFields.slug,
             WPRequestField.CategoryFields.taxonomy,
-            WPRequestField.CategoryFields.parent
+            WPRequestField.CategoryFields.parent,
+            WPRequestField.CategoryFields.custom(field: "field")
         ]
         
         let queryItems = fields.makeQueryItem()
@@ -44,7 +45,7 @@ final class WPCategoryRequestFieldTest: XCTestCase {
         XCTAssertEqual(queryItems!.value, fields.valueQueryItem)
         XCTAssertEqual(
             queryItems!.value,
-            "id,count,description,link,name,slug,taxonomy,parent"
+            "id,count,description,link,name,slug,taxonomy,parent,field"
         )
         
     

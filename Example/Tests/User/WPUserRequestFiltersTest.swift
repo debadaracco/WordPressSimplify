@@ -29,7 +29,8 @@ final class WPUserRequestFiltersTest: XCTestCase {
             .offset(number: 1),
             .order(type: .asc),
             .orderBy(type: .id),
-            .slug(slugs: ["slug1"])
+            .slug(slugs: ["slug1"]),
+            .custom(key: "key", value: "value")
         ]
         let queryItems = (filters as [WPRequestFilterProtocol]).makeQueryItems()
         XCTAssertEqual(queryItems[0].name, "context")
@@ -52,6 +53,8 @@ final class WPUserRequestFiltersTest: XCTestCase {
         XCTAssertEqual(queryItems[8].value, "id")
         XCTAssertEqual(queryItems[9].name, "slug")
         XCTAssertEqual(queryItems[9].value, "slug1")
+        XCTAssertEqual(queryItems[10].name, "key")
+        XCTAssertEqual(queryItems[10].value, "value")
     }
 
     func testListUserFilters_With_EmptyList() throws {
