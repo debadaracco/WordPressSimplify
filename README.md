@@ -38,7 +38,7 @@ WordPressSimplify is available through [Swift Package Manager](https://www.swift
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/debadaracco/WordPressSimplify.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/debadaracco/WordPressSimplify.git", .upToNextMajor(from: "1.0.1"))
 ]
 ```
 
