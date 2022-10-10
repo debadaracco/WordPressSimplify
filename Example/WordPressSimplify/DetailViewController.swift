@@ -26,6 +26,8 @@ class DetailViewController: UIViewController {
     }
     enum WPType: String, CaseIterable {
         case categories
+        case comments
+        case media
         case pages
         case posts
         case tags
@@ -80,6 +82,22 @@ class DetailViewController: UIViewController {
         let page = 1
         let perPage = 30
         switch self.wpType {
+        case .comments:
+            self.wordpressSimplify.fetchComments(
+                filters: [
+                    .page(number: page),
+                    .perPage(number: perPage)
+                ],
+                completion: self.onLoadDataComplete
+            )
+        case .media:
+            self.wordpressSimplify.fetchMedias(
+                filters: [
+                    .page(number: page),
+                    .perPage(number: perPage)
+                ],
+                completion: self.onLoadDataComplete
+            )
         case .users:
             self.wordpressSimplify.fetchUsers(
                 filters: [
@@ -147,6 +165,22 @@ class DetailViewController: UIViewController {
         }
         
         switch self.wpType {
+        case .comments:
+            self.wordpressSimplify.fetchComments(
+                filters: [
+                    .page(number: page),
+                    .perPage(number: perPage)
+                ],
+                completion: self.onLoadMoreComplete
+            )
+        case .media:
+            self.wordpressSimplify.fetchMedias(
+                filters: [
+                    .page(number: page),
+                    .perPage(number: perPage)
+                ],
+                completion: self.onLoadMoreComplete
+            )
         case .users:
             self.wordpressSimplify.fetchUsers(
                 filters: [
@@ -261,5 +295,16 @@ extension WPPost: ContentListeable {
 extension WPPage: ContentListeable {
     var listeableTitle: String {
         return self.title?.rendered ?? ""
+    }
+}
+
+extension WPMedia: ContentListeable {
+    var listeableTitle: String {
+        return self.title?.rendered ?? ""
+    }
+}
+extension WPComment: ContentListeable {
+    var listeableTitle: String {
+        return self.content?.rendered ?? ""
     }
 }

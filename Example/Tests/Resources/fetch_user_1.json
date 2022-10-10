@@ -4,5 +4,11 @@
     "url": "http://www.test1.com",
     "description": "",
     "link": "https://test1.com/author/test1/",
-    "slug": "test-1"
+    "slug": "test-1",
+    "avatar_urls": {
+        "24":"https://sitio.com/test_24/",
+        "48":"https://sitio.com/test_48/",
+        "96":"https://sitio.com/test_96/",
+        "128":"https://sitio.com/test_128/"
+    }
 }

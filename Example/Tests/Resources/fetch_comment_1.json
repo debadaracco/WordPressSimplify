@@ -1,0 +1,22 @@
+{
+    "id":1,
+    "post":1,
+    "parent":1,
+    "author":1,
+    "author_name":"test-1",
+    "author_url":"https://sitio.com/test_1/",
+    "date":"2022-10-04T14:53:06",
+    "date_gmt":"2022-10-04T17:53:06",
+    "content":{
+        "rendered":"title-1"
+    },
+    "link":"https://sitio.com/test-1",
+    "status":"approved",
+    "type":"comment",
+    "author_avatar_urls":{
+        "24":"https://sitio.com/test_24/",
+        "48":"https://sitio.com/test_48/",
+        "96":"https://sitio.com/test_96/",
+        "128":"https://sitio.com/test_128/"
+    }
+}
