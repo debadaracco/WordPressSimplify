@@ -9,6 +9,7 @@ target 'WordPressSimplify_Example' do
   pod 'WordPressSimplify', :path => './'
   pod "UIScrollView-InfiniteScroll"
   pod "Alamofire"
+  pod "AlamofireImage"
   
   target 'WordPressSimplify_Tests' do
     inherit! :search_paths

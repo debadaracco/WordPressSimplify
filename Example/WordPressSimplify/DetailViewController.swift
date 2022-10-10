@@ -8,6 +8,7 @@
 import UIKit
 import WordPressSimplify
 import UIScrollView_InfiniteScroll
+import AlamofireImage
 
 class DetailViewController: UIViewController {
     enum RestClients: String, CaseIterable {
@@ -260,12 +261,23 @@ extension DetailViewController: UITableViewDataSource {
         cell.textLabel?.text = item.listeableTitle
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = .byWordWrapping
+        cell.imageView?.af.cancelImageRequest()
+        
+        if let imageURL = item.imageURL {
+            cell.imageView?.af.setImage(withURL: imageURL)
+        }
+        
         return cell
     }
 }
 
 protocol ContentListeable {
     var listeableTitle: String {get}
+    var imageURL: URL? {get}
+}
+
+extension ContentListeable {
+    var imageURL: URL? { return nil }
 }
 
 extension WPUser: ContentListeable {
@@ -301,6 +313,14 @@ extension WPPage: ContentListeable {
 extension WPMedia: ContentListeable {
     var listeableTitle: String {
         return self.title?.rendered ?? ""
+    }
+    
+    var imageURL: URL? {
+        guard let source_url = self.source_url else {
+            return nil
+        }
+        
+        return URL(string: source_url)
     }
 }
 extension WPComment: ContentListeable {
