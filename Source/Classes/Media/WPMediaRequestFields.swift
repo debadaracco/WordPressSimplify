@@ -35,7 +35,7 @@ public extension WPRequestField {
             .sourceUrl,
             .custom(field: "")
         ]
-        
+
         case id
         case date
         case dateGmt
@@ -60,7 +60,7 @@ public extension WPRequestField {
         case post
         case sourceUrl
         case custom(field: String)
-        
+
         var fieldValue: String {
             switch self {
             case .id:
@@ -115,4 +115,3 @@ public extension WPRequestField {
         }
     }
 }
-

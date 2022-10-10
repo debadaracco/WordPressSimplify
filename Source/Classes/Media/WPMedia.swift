@@ -36,7 +36,7 @@ public protocol WPMediaModel: Codable {
 
 public struct WPMedia: WPMediaModel {
     public typealias MediaDetail = WPMediaDetail
-    
+
     public let id: Int?
     public let date: String?
     public let date_gmt: String?
@@ -61,6 +61,3 @@ public struct WPMedia: WPMediaModel {
     public let post: Int?
     public let source_url: String?
 }
-
-
-

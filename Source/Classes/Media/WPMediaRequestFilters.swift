@@ -22,8 +22,7 @@ public extension WPRequestFilter {
             case includeSlugs = "include_slugs"
             case title
         }
-        
-        
+
         case context(type: Context)
         case page(number: Int)
         case perPage(number: Int)
@@ -44,7 +43,7 @@ public extension WPRequestFilter {
         case mediaType(value: WPMediaType)
         case mimeType(value: String)
         case custom(key: String, value: String)
-        
+
         public var nameQueryItem: String {
             switch self {
             case .context(_ ):
@@ -89,7 +88,7 @@ public extension WPRequestFilter {
                 return key
             }
         }
-        
+
         public var valueQueryItem: String {
             switch self {
             case .context(let type):

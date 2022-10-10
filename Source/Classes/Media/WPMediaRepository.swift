@@ -13,7 +13,7 @@ protocol WPMediaRepositoryProtocol {
         fields: [WPRequestField.MediaFields],
         completion: @escaping (Result<[T], Error>) -> Void
     )
-    
+
     func fetch<T: WPMediaModel> (
         id: Int,
         fields: [WPRequestField.MediaFields],
@@ -24,11 +24,11 @@ protocol WPMediaRepositoryProtocol {
 class WPMediaRepository: WPMediaRepositoryProtocol {
     private let path = "/wp-json/wp/v2/media"
     private let networking: WPNetworkingProtocol
-    
+
     init(networking: WPNetworkingProtocol) {
         self.networking = networking
     }
-    
+
     func fetch<T: WPMediaModel> (
         filters: [WPRequestFilter.ListMedia],
         fields: [WPRequestField.MediaFields],
@@ -41,7 +41,7 @@ class WPMediaRepository: WPMediaRepositoryProtocol {
             completion: completion
         )
     }
-    
+
     func fetch<T: WPMediaModel> (
         id: Int,
         fields: [WPRequestField.MediaFields],
