@@ -1,5 +1,9 @@
 # WordPressSimplify
 
+## 1.1.0
+
+- [TR9 - Implement Media Logic](https://trello.com/c/erPIOzPg/9-media)
+
 ## 1.0.1
 
 - [TR8 - Fix Custom fields and filters](https://trello.com/c/yeymfWuK/8-custom-fields-filters)
