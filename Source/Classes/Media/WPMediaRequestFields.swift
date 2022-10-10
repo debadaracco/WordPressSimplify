@@ -1,15 +1,15 @@
 //
-//  WPPostRequestFields.swift
+//  WPMediaRequestFields.swift
 //  WordPressSimplify
 //
-//  Created by Diego Badaracco on 07/10/2022.
+//  Created by Diego Badaracco on 09/10/2022.
 //
 
 import Foundation
 
 public extension WPRequestField {
-    enum PostFields: CaseIterable, WPRequestFieldTypeProtocol {
-        public static var allCases: [WPRequestField.PostFields] = [
+    enum MediaFields: CaseIterable, WPRequestFieldTypeProtocol {
+        public static var allCases: [WPRequestField.MediaFields] = [
             .id,
             .date,
             .dateGmt,
@@ -21,17 +21,18 @@ public extension WPRequestField {
             .status,
             .type,
             .title,
-            .content,
             .author,
-            .excerpt,
-            .featuredMedia,
             .commentStatus,
             .pingStatus,
-            .format,
-            .sticky,
             .template,
-            .categories,
-            .tags,
+            .altText,
+            .caption,
+            .description,
+            .mediaType,
+            .mimeType,
+            .mediaDetails,
+            .post,
+            .sourceUrl,
             .custom(field: "")
         ]
 
@@ -46,17 +47,18 @@ public extension WPRequestField {
         case status
         case type
         case title
-        case content
         case author
-        case excerpt
-        case featuredMedia
         case commentStatus
         case pingStatus
-        case format
-        case sticky
         case template
-        case categories
-        case tags
+        case altText
+        case caption
+        case description
+        case mediaType
+        case mimeType
+        case mediaDetails
+        case post
+        case sourceUrl
         case custom(field: String)
 
         var fieldValue: String {
@@ -83,28 +85,30 @@ public extension WPRequestField {
                 return Constants.AllFields.type
             case .title:
                 return Constants.AllFields.title
-            case .content:
-                return Constants.AllFields.content
             case .author:
                 return Constants.AllFields.author
-            case .excerpt:
-                return Constants.AllFields.excerpt
-            case .featuredMedia:
-                return Constants.AllFields.featuredMedia
             case .commentStatus:
                 return Constants.AllFields.commentStatus
             case .pingStatus:
                 return Constants.AllFields.pingStatus
-            case .format:
-                return Constants.AllFields.format
-            case .sticky:
-                return Constants.AllFields.sticky
             case .template:
                 return Constants.AllFields.template
-            case .categories:
-                return Constants.AllFields.categories
-            case .tags:
-                return Constants.AllFields.tags
+            case .altText:
+                return Constants.AllFields.altText
+            case .caption:
+                return Constants.AllFields.caption
+            case .description:
+                return Constants.AllFields.description
+            case .mediaType:
+                return Constants.AllFields.mediaType
+            case .mimeType:
+                return Constants.AllFields.mimeType
+            case .mediaDetails:
+                return Constants.AllFields.mediaDetails
+            case .post:
+                return Constants.AllFields.post
+            case .sourceUrl:
+                return Constants.AllFields.sourceUrl
             case .custom(let field):
                 return field
             }

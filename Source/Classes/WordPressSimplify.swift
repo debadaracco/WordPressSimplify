@@ -13,6 +13,7 @@ public class WordPressSimplify {
     fileprivate let wpTagsRepository: WPTagRepositoryProtocol
     fileprivate let wpPostRepository: WPPostRepositoryProtocol
     fileprivate let wpPageRepository: WPPageRepositoryProtocol
+    fileprivate let wpMediaRepository: WPMediaRepositoryProtocol
 
     public init(
         baseURL: String,
@@ -27,6 +28,7 @@ public class WordPressSimplify {
         self.wpTagsRepository = WPTagRepository(networking: networking)
         self.wpPostRepository = WPPostRepository(networking: networking)
         self.wpPageRepository = WPPageRepository(networking: networking)
+        self.wpMediaRepository = WPMediaRepository(networking: networking)
     }
 }
 
@@ -270,6 +272,57 @@ extension WordPressSimplify {
         completion: @escaping (Result<WPPage, Error>) -> Void
     ) {
         self.wpPageRepository.fetch(
+            id: id,
+            fields: fields,
+            completion: completion
+        )
+    }
+}
+
+// MARK: - Media
+extension WordPressSimplify {
+    public func fetchMedias<T: WPMediaModel>(
+        filters: [WPRequestFilter.ListMedia] = [WPRequestFilter.ListMedia](),
+        fields: [WPRequestField.MediaFields] = [WPRequestField.MediaFields](),
+        completion: @escaping (Result<[T], Error>) -> Void
+    ) {
+        self.wpMediaRepository.fetch(
+            filters: filters,
+            fields: fields,
+            completion: completion
+        )
+    }
+
+    public func fetchMedia<T: WPMediaModel>(
+        id: Int,
+        fields: [WPRequestField.MediaFields] = [WPRequestField.MediaFields](),
+        completion: @escaping (Result<T, Error>) -> Void
+    ) {
+        self.wpMediaRepository.fetch(
+            id: id,
+            fields: fields,
+            completion: completion
+        )
+    }
+
+    public func fetchMedias(
+        filters: [WPRequestFilter.ListMedia] = [WPRequestFilter.ListMedia](),
+        fields: [WPRequestField.MediaFields] = [WPRequestField.MediaFields](),
+        completion: @escaping (Result<[WPMedia], Error>) -> Void
+    ) {
+        self.wpMediaRepository.fetch(
+            filters: filters,
+            fields: fields,
+            completion: completion
+        )
+    }
+
+    public func fetchMedia(
+        id: Int,
+        fields: [WPRequestField.MediaFields] = [WPRequestField.MediaFields](),
+        completion: @escaping (Result<WPMedia, Error>) -> Void
+    ) {
+        self.wpMediaRepository.fetch(
             id: id,
             fields: fields,
             completion: completion

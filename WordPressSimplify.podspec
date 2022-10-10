@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WordPressSimplify'
-  s.version          = '1.0.1'
+  s.version          = '1.1.0'
   s.summary          = "Simplify WordPress requests and models"
 
   s.homepage         = 'https://github.com/debadaracco/WordPressSimplify'

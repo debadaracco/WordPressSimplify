@@ -34,21 +34,21 @@ public extension WPRequestField {
         var fieldValue: String {
             switch self {
             case .id:
-                return "id"
+                return Constants.AllFields.id
             case .count:
-                return "count"
+                return Constants.AllFields.count
             case .description:
-                return "description"
+                return Constants.AllFields.description
             case .link:
-                return "link"
+                return Constants.AllFields.link
             case .name:
-                return "name"
+                return Constants.AllFields.name
             case .slug:
-                return "slug"
+                return Constants.AllFields.slug
             case .taxonomy:
-                return "taxonomy"
+                return Constants.AllFields.taxonomy
             case .parent:
-                return "parent"
+                return Constants.AllFields.parent
             case .custom(let field):
                 return field
             }

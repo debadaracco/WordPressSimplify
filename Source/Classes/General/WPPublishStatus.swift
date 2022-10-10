@@ -13,4 +13,5 @@ public enum WPPublishStatus: String, Codable {
     case draft
     case pending
     case ´private´ = "private"
+    case inherit
 }
