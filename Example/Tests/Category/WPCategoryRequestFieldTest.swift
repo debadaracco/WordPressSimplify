@@ -47,8 +47,5 @@ final class WPCategoryRequestFieldTest: XCTestCase {
             queryItems!.value,
             "id,count,description,link,name,slug,taxonomy,parent,field"
         )
-        
-    
     }
-
 }

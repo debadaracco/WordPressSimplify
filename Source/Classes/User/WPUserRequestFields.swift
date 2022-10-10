@@ -42,29 +42,29 @@ public extension WPRequestField {
         var fieldValue: String {
             switch self {
             case .id:
-                return "id"
+                return Constants.AllFields.id
             case .username:
-                return "username"
+                return Constants.AllFields.username
             case .name:
-                return "name"
+                return Constants.AllFields.name
             case .firstName:
-                return "first_name"
+                return Constants.AllFields.firstName
             case .lastName:
-                return "last_name"
+                return Constants.AllFields.lastName
             case .email:
-                return "email"
+                return Constants.AllFields.email
             case .url:
-                return "url"
+                return Constants.AllFields.url
             case .description:
-                return "description"
+                return Constants.AllFields.description
             case .link:
-                return "link"
+                return Constants.AllFields.link
             case .locale:
-                return "locale"
+                return Constants.AllFields.locale
             case .nickname:
-                return "nickname"
+                return Constants.AllFields.nickname
             case .slug:
-                return "slug"
+                return Constants.AllFields.slug
             case .custom(let field):
                 return field
             }

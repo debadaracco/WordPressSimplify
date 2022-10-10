@@ -58,45 +58,45 @@ public extension WPRequestField {
         var fieldValue: String {
             switch self {
             case .id:
-                return "id"
+                return Constants.AllFields.id
             case .date:
-                return "date"
+                return Constants.AllFields.date
             case .dateGmt:
-                return "date_gmt"
+                return Constants.AllFields.dateGmt
             case .guid:
-                return "guid"
+                return Constants.AllFields.guid
             case .link:
-                return "link"
+                return Constants.AllFields.link
             case .modified:
-                return "modified"
+                return Constants.AllFields.modified
             case .modifiedGmt:
-                return "modified_gmt"
+                return Constants.AllFields.modifiedGmt
             case .slug:
-                return "slug"
+                return Constants.AllFields.slug
             case .status:
-                return "status"
+                return Constants.AllFields.status
             case .type:
-                return "type"
+                return Constants.AllFields.type
             case .parent:
-                return "parent"
+                return Constants.AllFields.parent
             case .title:
-                return "title"
+                return Constants.AllFields.title
             case .content:
-                return "content"
+                return Constants.AllFields.content
             case .author:
-                return "author"
+                return Constants.AllFields.author
             case .excerpt:
-                return "excerpt"
+                return Constants.AllFields.excerpt
             case .featuredMedia:
-                return "featured_media"
+                return Constants.AllFields.featuredMedia
             case .commentStatus:
-                return "comment_status"
+                return Constants.AllFields.commentStatus
             case .pingStatus:
-                return "ping_status"
+                return Constants.AllFields.pingStatus
             case .menuOrder:
-                return "menu_order"
+                return Constants.AllFields.menuOrder
             case .template:
-                return "template"
+                return Constants.AllFields.template
             case .custom(let field):
                 return field
             }
