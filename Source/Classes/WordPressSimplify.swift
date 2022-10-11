@@ -14,6 +14,7 @@ public class WordPressSimplify {
     fileprivate let wpPostRepository: WPPostRepositoryProtocol
     fileprivate let wpPageRepository: WPPageRepositoryProtocol
     fileprivate let wpMediaRepository: WPMediaRepositoryProtocol
+    fileprivate let wpCommentRepository: WPCommentRepositoryProtocol
 
     public init(
         baseURL: String,
@@ -29,6 +30,7 @@ public class WordPressSimplify {
         self.wpPostRepository = WPPostRepository(networking: networking)
         self.wpPageRepository = WPPageRepository(networking: networking)
         self.wpMediaRepository = WPMediaRepository(networking: networking)
+        self.wpCommentRepository = WPCommentRepository(networking: networking)
     }
 }
 
@@ -323,6 +325,57 @@ extension WordPressSimplify {
         completion: @escaping (Result<WPMedia, Error>) -> Void
     ) {
         self.wpMediaRepository.fetch(
+            id: id,
+            fields: fields,
+            completion: completion
+        )
+    }
+}
+
+// MARK: - Comment
+extension WordPressSimplify {
+    public func fetchComments<T: WPCommentModel>(
+        filters: [WPRequestFilter.ListComment] = [WPRequestFilter.ListComment](),
+        fields: [WPRequestField.CommentFields] = [WPRequestField.CommentFields](),
+        completion: @escaping (Result<[T], Error>) -> Void
+    ) {
+        self.wpCommentRepository.fetch(
+            filters: filters,
+            fields: fields,
+            completion: completion
+        )
+    }
+
+    public func fetchComment<T: WPCommentModel>(
+        id: Int,
+        fields: [WPRequestField.CommentFields] = [WPRequestField.CommentFields](),
+        completion: @escaping (Result<T, Error>) -> Void
+    ) {
+        self.wpCommentRepository.fetch(
+            id: id,
+            fields: fields,
+            completion: completion
+        )
+    }
+
+    public func fetchComments(
+        filters: [WPRequestFilter.ListComment] = [WPRequestFilter.ListComment](),
+        fields: [WPRequestField.CommentFields] = [WPRequestField.CommentFields](),
+        completion: @escaping (Result<[WPComment], Error>) -> Void
+    ) {
+        self.wpCommentRepository.fetch(
+            filters: filters,
+            fields: fields,
+            completion: completion
+        )
+    }
+
+    public func fetchComment(
+        id: Int,
+        fields: [WPRequestField.CommentFields] = [WPRequestField.CommentFields](),
+        completion: @escaping (Result<WPComment, Error>) -> Void
+    ) {
+        self.wpCommentRepository.fetch(
             id: id,
             fields: fields,
             completion: completion

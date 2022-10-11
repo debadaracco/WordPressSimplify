@@ -8,6 +8,7 @@
 import UIKit
 import WordPressSimplify
 import UIScrollView_InfiniteScroll
+import AlamofireImage
 
 class DetailViewController: UIViewController {
     enum RestClients: String, CaseIterable {
@@ -26,6 +27,8 @@ class DetailViewController: UIViewController {
     }
     enum WPType: String, CaseIterable {
         case categories
+        case comments
+        case media
         case pages
         case posts
         case tags
@@ -80,6 +83,22 @@ class DetailViewController: UIViewController {
         let page = 1
         let perPage = 30
         switch self.wpType {
+        case .comments:
+            self.wordpressSimplify.fetchComments(
+                filters: [
+                    .page(number: page),
+                    .perPage(number: perPage)
+                ],
+                completion: self.onLoadDataComplete
+            )
+        case .media:
+            self.wordpressSimplify.fetchMedias(
+                filters: [
+                    .page(number: page),
+                    .perPage(number: perPage)
+                ],
+                completion: self.onLoadDataComplete
+            )
         case .users:
             self.wordpressSimplify.fetchUsers(
                 filters: [
@@ -147,6 +166,22 @@ class DetailViewController: UIViewController {
         }
         
         switch self.wpType {
+        case .comments:
+            self.wordpressSimplify.fetchComments(
+                filters: [
+                    .page(number: page),
+                    .perPage(number: perPage)
+                ],
+                completion: self.onLoadMoreComplete
+            )
+        case .media:
+            self.wordpressSimplify.fetchMedias(
+                filters: [
+                    .page(number: page),
+                    .perPage(number: perPage)
+                ],
+                completion: self.onLoadMoreComplete
+            )
         case .users:
             self.wordpressSimplify.fetchUsers(
                 filters: [
@@ -226,12 +261,23 @@ extension DetailViewController: UITableViewDataSource {
         cell.textLabel?.text = item.listeableTitle
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = .byWordWrapping
+        cell.imageView?.af.cancelImageRequest()
+        
+        if let imageURL = item.imageURL {
+            cell.imageView?.af.setImage(withURL: imageURL)
+        }
+        
         return cell
     }
 }
 
 protocol ContentListeable {
     var listeableTitle: String {get}
+    var imageURL: URL? {get}
+}
+
+extension ContentListeable {
+    var imageURL: URL? { return nil }
 }
 
 extension WPUser: ContentListeable {
@@ -261,5 +307,24 @@ extension WPPost: ContentListeable {
 extension WPPage: ContentListeable {
     var listeableTitle: String {
         return self.title?.rendered ?? ""
+    }
+}
+
+extension WPMedia: ContentListeable {
+    var listeableTitle: String {
+        return self.title?.rendered ?? ""
+    }
+    
+    var imageURL: URL? {
+        guard let source_url = self.source_url else {
+            return nil
+        }
+        
+        return URL(string: source_url)
+    }
+}
+extension WPComment: ContentListeable {
+    var listeableTitle: String {
+        return self.content?.rendered ?? ""
     }
 }

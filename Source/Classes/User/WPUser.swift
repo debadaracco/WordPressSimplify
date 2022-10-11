@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol WPUserModel: Codable {
+public protocol WPUserModel: Codable, WPAvatarProtocol {
     var id: Int? {get}
     var username: String? {get}
     var name: String {get}
@@ -20,6 +20,13 @@ public protocol WPUserModel: Codable {
     var locale: String? {get}
     var nickname: String? {get}
     var slug: String? {get}
+    var avatar_urls: WPAvatarURLS? {get}
+}
+
+extension WPUserModel {
+    public func avatarUrl(by size: WPAvatarSizes) -> String? {
+        return self.avatar_urls?[size.rawValue]
+    }
 }
 
 public struct WPUser: WPUserModel {
@@ -35,4 +42,5 @@ public struct WPUser: WPUserModel {
     public let locale: String?
     public let nickname: String?
     public let slug: String?
+    public let avatar_urls: WPAvatarURLS?
 }

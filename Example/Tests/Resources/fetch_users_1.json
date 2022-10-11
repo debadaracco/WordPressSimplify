@@ -5,7 +5,13 @@
         "url": "http://www.test1.com",
         "description": "",
         "link": "https://test1.com/author/test1/",
-        "slug": "test-1"
+        "slug": "test-1",
+        "avatar_urls": {
+            "24":"https://sitio.com/test_24/",
+            "48":"https://sitio.com/test_48/",
+            "96":"https://sitio.com/test_96/",
+            "128":"https://sitio.com/test_128/"
+        }
     },
     {
         "id": 2,
@@ -13,7 +19,13 @@
         "url": "http://www.test2.com",
         "description": "",
         "link": "https://test2.com/author/test2/",
-        "slug": "test-2"
+        "slug": "test-2",
+        "avatar_urls": {
+            "24":"https://sitio.com/test_24/",
+            "48":"https://sitio.com/test_48/",
+            "96":"https://sitio.com/test_96/",
+            "128":"https://sitio.com/test_128/"
+        }
     },
     {
         "id": 3,
@@ -21,7 +33,13 @@
         "url": "http://www.test3.com",
         "description": "",
         "link": "https://test3.com/author/test3/",
-        "slug": "test-3"
+        "slug": "test-3",
+        "avatar_urls": {
+            "24":"https://sitio.com/test_24/",
+            "48":"https://sitio.com/test_48/",
+            "96":"https://sitio.com/test_96/",
+            "128":"https://sitio.com/test_128/"
+        }
     },
     {
         "id": 4,
@@ -29,6 +47,12 @@
         "url": "http://www.test4.com",
         "description": "",
         "link": "https://test4.com/author/test4/",
-        "slug": "test-4"
+        "slug": "test-4",
+        "avatar_urls": {
+            "24":"https://sitio.com/test_24/",
+            "48":"https://sitio.com/test_48/",
+            "96":"https://sitio.com/test_96/",
+            "128":"https://sitio.com/test_128/"
+        }
     }
 ]

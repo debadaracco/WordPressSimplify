@@ -83,5 +83,9 @@ enum Constants {
         static let url = "url"
         static let locale = "locale"
         static let nickname = "nickname"
+        static let authorEmail = "author_email"
+        static let authorName = "author_name"
+        static let authorUrl = "author_url"
+        static let authorAvatarUrls = "author_avatar_urls"
     }
 }

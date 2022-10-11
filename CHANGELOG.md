@@ -1,5 +1,10 @@
 # WordPressSimplify
 
+## 1.2.0
+
+- [TR10 - Implement Comments Logic](https://trello.com/c/k9hrpu6n/10-comments)
+- [TR11 - Fix Test using expectations](https://trello.com/c/OruueZso/11-fix-tests)
+
 ## 1.1.0
 
 - [TR9 - Implement Media Logic](https://trello.com/c/erPIOzPg/9-media)

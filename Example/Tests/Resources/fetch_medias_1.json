@@ -15,7 +15,7 @@
         "title": {
             "rendered": "test"
         },
-        "author": 177,
+        "author": 1,
         "comment_status": "open",
         "ping_status": "closed",
         "template": "",
@@ -132,7 +132,7 @@
             }
         },
         "post": 1,
-        "source_url": "https://sitio.com/test"
+        "source_url": "https://sitio.com/test_1"
     },
     {
         "id": 2,
@@ -150,7 +150,7 @@
         "title": {
             "rendered": "test"
         },
-        "author": 277,
+        "author": 2,
         "comment_status": "open",
         "ping_status": "closed",
         "template": "",
@@ -267,6 +267,6 @@
             }
         },
         "post": 2,
-        "source_url": "https://sitio.com/test"
+        "source_url": "https://sitio.com/test_2"
     }
 ]

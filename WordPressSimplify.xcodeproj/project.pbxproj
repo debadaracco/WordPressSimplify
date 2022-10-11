@@ -14,17 +14,28 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		90A9FAE3CBE04615CFF8BF25 /* Pods_WordPressSimplify_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB628D0145BBE0D8A031625C /* Pods_WordPressSimplify_Example.framework */; };
 		AFE560A7E2A9E54C213B3A39 /* Pods_WordPressSimplify_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C1FB9A6852D5089047CF09 /* Pods_WordPressSimplify_Tests.framework */; };
+		F405811828F4B57A00C7666D /* WordPressSimplifyTests_Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F405811728F4B57A00C7666D /* WordPressSimplifyTests_Posts.swift */; };
+		F405811A28F4B5A000C7666D /* WordPressSimplifyTests_Pages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F405811928F4B5A000C7666D /* WordPressSimplifyTests_Pages.swift */; };
 		F442F57128F3975400B1928F /* fetch_media_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F442F56F28F3975400B1928F /* fetch_media_1.json */; };
 		F442F57228F3975400B1928F /* fetch_medias_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F442F57028F3975400B1928F /* fetch_medias_1.json */; };
 		F442F57528F3977000B1928F /* WPMediaRequestFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F442F57428F3977000B1928F /* WPMediaRequestFieldTest.swift */; };
 		F442F57728F3979300B1928F /* WPMediaRequestFiltersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F442F57628F3979300B1928F /* WPMediaRequestFiltersTest.swift */; };
 		F442F57928F3A0C800B1928F /* WPCustomMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F442F57828F3A0C800B1928F /* WPCustomMediaModel.swift */; };
+		F4624EB028F4B7970020B615 /* WordPressSimplifyTests_Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4624EAF28F4B7970020B615 /* WordPressSimplifyTests_Media.swift */; };
+		F4624EB228F4B7BD0020B615 /* WordPressSimplifyTests_Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4624EB128F4B7BD0020B615 /* WordPressSimplifyTests_Comments.swift */; };
+		F480F7FF28F46567005FA3AB /* WPCommentRequestFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F7FE28F46567005FA3AB /* WPCommentRequestFieldTest.swift */; };
+		F480F80128F46576005FA3AB /* WPCommentRequestFiltersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F80028F46576005FA3AB /* WPCommentRequestFiltersTest.swift */; };
+		F480F80428F467C4005FA3AB /* fetch_comment_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F480F80228F467C4005FA3AB /* fetch_comment_1.json */; };
+		F480F80528F467C4005FA3AB /* fetch_comments_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F480F80328F467C4005FA3AB /* fetch_comments_1.json */; };
+		F480F80728F46AA2005FA3AB /* WPCustomCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F80628F46AA2005FA3AB /* WPCustomCommentModel.swift */; };
+		F480F80A28F4B11A005FA3AB /* WordPressSimplifyTests_Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F80928F4B11A005FA3AB /* WordPressSimplifyTests_Categories.swift */; };
+		F480F80C28F4B151005FA3AB /* WordPressSimplifyTests_Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F80B28F4B151005FA3AB /* WordPressSimplifyTests_Tags.swift */; };
 		F4839E1228EE669F00ED86C5 /* fetch_category_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F4839E1028EE669F00ED86C5 /* fetch_category_1.json */; };
 		F4839E1328EE669F00ED86C5 /* fetch_categories_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F4839E1128EE669F00ED86C5 /* fetch_categories_1.json */; };
 		F4839E1528EE67CE00ED86C5 /* WPCategoryRequestFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4839E1428EE67CE00ED86C5 /* WPCategoryRequestFieldTest.swift */; };
 		F4839E1728EE67E100ED86C5 /* WPCategoryRequestFiltersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4839E1628EE67E100ED86C5 /* WPCategoryRequestFiltersTest.swift */; };
 		F4B00A1F28EA8B9900DE51A4 /* WPNetworkingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1028EA8B9900DE51A4 /* WPNetworkingTest.swift */; };
-		F4B00A2028EA8B9900DE51A4 /* WordPressSimplifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1128EA8B9900DE51A4 /* WordPressSimplifyTests.swift */; };
+		F4B00A2028EA8B9900DE51A4 /* WordPressSimplifyTests_Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1128EA8B9900DE51A4 /* WordPressSimplifyTests_Users.swift */; };
 		F4B00A2128EA8B9900DE51A4 /* WPNetworkingClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1328EA8B9900DE51A4 /* WPNetworkingClientMock.swift */; };
 		F4B00A2228EA8B9900DE51A4 /* fetch_users_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F4B00A1528EA8B9900DE51A4 /* fetch_users_1.json */; };
 		F4B00A2328EA8B9900DE51A4 /* fetch_user_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F4B00A1628EA8B9900DE51A4 /* fetch_user_1.json */; };
@@ -81,6 +92,8 @@
 		9386B89D676C59F2FE971319 /* Pods-WordPressSimplify_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPressSimplify_Example.release.xcconfig"; path = "Target Support Files/Pods-WordPressSimplify_Example/Pods-WordPressSimplify_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B691003CAC2F52C81A417561 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CB628D0145BBE0D8A031625C /* Pods_WordPressSimplify_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WordPressSimplify_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F405811728F4B57A00C7666D /* WordPressSimplifyTests_Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPressSimplifyTests_Posts.swift; sourceTree = "<group>"; };
+		F405811928F4B5A000C7666D /* WordPressSimplifyTests_Pages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPressSimplifyTests_Pages.swift; sourceTree = "<group>"; };
 		F41B9CBC28EA960C00E6855A /* config.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = config.yml; sourceTree = "<group>"; };
 		F41B9CBD28EA960C00E6855A /* .slather.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .slather.yml; sourceTree = "<group>"; };
 		F41B9CBE28EA960C00E6855A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -89,13 +102,22 @@
 		F442F57428F3977000B1928F /* WPMediaRequestFieldTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPMediaRequestFieldTest.swift; sourceTree = "<group>"; };
 		F442F57628F3979300B1928F /* WPMediaRequestFiltersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPMediaRequestFiltersTest.swift; sourceTree = "<group>"; };
 		F442F57828F3A0C800B1928F /* WPCustomMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCustomMediaModel.swift; sourceTree = "<group>"; };
+		F4624EAF28F4B7970020B615 /* WordPressSimplifyTests_Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPressSimplifyTests_Media.swift; sourceTree = "<group>"; };
+		F4624EB128F4B7BD0020B615 /* WordPressSimplifyTests_Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPressSimplifyTests_Comments.swift; sourceTree = "<group>"; };
+		F480F7FE28F46567005FA3AB /* WPCommentRequestFieldTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCommentRequestFieldTest.swift; sourceTree = "<group>"; };
+		F480F80028F46576005FA3AB /* WPCommentRequestFiltersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCommentRequestFiltersTest.swift; sourceTree = "<group>"; };
+		F480F80228F467C4005FA3AB /* fetch_comment_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_comment_1.json; sourceTree = "<group>"; };
+		F480F80328F467C4005FA3AB /* fetch_comments_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_comments_1.json; sourceTree = "<group>"; };
+		F480F80628F46AA2005FA3AB /* WPCustomCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCustomCommentModel.swift; sourceTree = "<group>"; };
+		F480F80928F4B11A005FA3AB /* WordPressSimplifyTests_Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPressSimplifyTests_Categories.swift; sourceTree = "<group>"; };
+		F480F80B28F4B151005FA3AB /* WordPressSimplifyTests_Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPressSimplifyTests_Tags.swift; sourceTree = "<group>"; };
 		F4839E1028EE669F00ED86C5 /* fetch_category_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_category_1.json; sourceTree = "<group>"; };
 		F4839E1128EE669F00ED86C5 /* fetch_categories_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_categories_1.json; sourceTree = "<group>"; };
 		F4839E1428EE67CE00ED86C5 /* WPCategoryRequestFieldTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCategoryRequestFieldTest.swift; sourceTree = "<group>"; };
 		F4839E1628EE67E100ED86C5 /* WPCategoryRequestFiltersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCategoryRequestFiltersTest.swift; sourceTree = "<group>"; };
 		F4B00A0E28EA8B9900DE51A4 /* WordPressSimplify_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordPressSimplify_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4B00A1028EA8B9900DE51A4 /* WPNetworkingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPNetworkingTest.swift; sourceTree = "<group>"; };
-		F4B00A1128EA8B9900DE51A4 /* WordPressSimplifyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPressSimplifyTests.swift; sourceTree = "<group>"; };
+		F4B00A1128EA8B9900DE51A4 /* WordPressSimplifyTests_Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPressSimplifyTests_Users.swift; sourceTree = "<group>"; };
 		F4B00A1328EA8B9900DE51A4 /* WPNetworkingClientMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPNetworkingClientMock.swift; sourceTree = "<group>"; };
 		F4B00A1528EA8B9900DE51A4 /* fetch_users_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_users_1.json; sourceTree = "<group>"; };
 		F4B00A1628EA8B9900DE51A4 /* fetch_user_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fetch_user_1.json; sourceTree = "<group>"; };
@@ -204,6 +226,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				F480F80828F4B05A005FA3AB /* WordPressSimplify */,
+				F480F7FD28F46552005FA3AB /* Comment */,
 				F4839E0D28EE645E00ED86C5 /* Category */,
 				F4B00A1928EA8B9900DE51A4 /* Extensions */,
 				F442F57328F3975C00B1928F /* Media */,
@@ -217,7 +241,6 @@
 				F4DDA07328EFDD810031EA96 /* Tag */,
 				F4B00A1B28EA8B9900DE51A4 /* User */,
 				F4B00A0E28EA8B9900DE51A4 /* WordPressSimplify_Tests-Bridging-Header.h */,
-				F4B00A1128EA8B9900DE51A4 /* WordPressSimplifyTests.swift */,
 			);
 			name = Tests;
 			path = Example/Tests;
@@ -278,6 +301,29 @@
 			path = Media;
 			sourceTree = "<group>";
 		};
+		F480F7FD28F46552005FA3AB /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				F480F7FE28F46567005FA3AB /* WPCommentRequestFieldTest.swift */,
+				F480F80028F46576005FA3AB /* WPCommentRequestFiltersTest.swift */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		F480F80828F4B05A005FA3AB /* WordPressSimplify */ = {
+			isa = PBXGroup;
+			children = (
+				F480F80928F4B11A005FA3AB /* WordPressSimplifyTests_Categories.swift */,
+				F4624EB128F4B7BD0020B615 /* WordPressSimplifyTests_Comments.swift */,
+				F4624EAF28F4B7970020B615 /* WordPressSimplifyTests_Media.swift */,
+				F405811928F4B5A000C7666D /* WordPressSimplifyTests_Pages.swift */,
+				F405811728F4B57A00C7666D /* WordPressSimplifyTests_Posts.swift */,
+				F480F80B28F4B151005FA3AB /* WordPressSimplifyTests_Tags.swift */,
+				F4B00A1128EA8B9900DE51A4 /* WordPressSimplifyTests_Users.swift */,
+			);
+			path = WordPressSimplify;
+			sourceTree = "<group>";
+		};
 		F4839E0D28EE645E00ED86C5 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,18 +352,20 @@
 		F4B00A1428EA8B9900DE51A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F4DDA07B28EFDEE20031EA96 /* fetch_tag_1.json */,
-				F4DDA07A28EFDEE20031EA96 /* fetch_tags_1.json */,
+				F480F80228F467C4005FA3AB /* fetch_comment_1.json */,
+				F480F80328F467C4005FA3AB /* fetch_comments_1.json */,
+				F4839E1128EE669F00ED86C5 /* fetch_categories_1.json */,
+				F4839E1028EE669F00ED86C5 /* fetch_category_1.json */,
+				F442F56F28F3975400B1928F /* fetch_media_1.json */,
+				F442F57028F3975400B1928F /* fetch_medias_1.json */,
 				F4DDA0B128F00D0C0031EA96 /* fetch_page_1.json */,
 				F4DDA0B028F00D0C0031EA96 /* fetch_pages_1.json */,
 				F4DDA09C28EFF5320031EA96 /* fetch_post_1.json */,
 				F4DDA09D28EFF5320031EA96 /* fetch_posts_1.json */,
-				F4839E1128EE669F00ED86C5 /* fetch_categories_1.json */,
-				F4839E1028EE669F00ED86C5 /* fetch_category_1.json */,
-				F4B00A1528EA8B9900DE51A4 /* fetch_users_1.json */,
+				F4DDA07B28EFDEE20031EA96 /* fetch_tag_1.json */,
+				F4DDA07A28EFDEE20031EA96 /* fetch_tags_1.json */,
 				F4B00A1628EA8B9900DE51A4 /* fetch_user_1.json */,
-				F442F56F28F3975400B1928F /* fetch_media_1.json */,
-				F442F57028F3975400B1928F /* fetch_medias_1.json */,
+				F4B00A1528EA8B9900DE51A4 /* fetch_users_1.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -331,6 +379,7 @@
 				F4DDA0A028EFFC780031EA96 /* WPCustomPostModel.swift */,
 				F4DDA0B428F00DD00031EA96 /* WPCustomPageModel.swift */,
 				F442F57828F3A0C800B1928F /* WPCustomMediaModel.swift */,
+				F480F80628F46AA2005FA3AB /* WPCustomCommentModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -483,9 +532,11 @@
 				F4DDA0B328F00D0C0031EA96 /* fetch_page_1.json in Resources */,
 				F4DDA09E28EFF5320031EA96 /* fetch_post_1.json in Resources */,
 				F4839E1328EE669F00ED86C5 /* fetch_categories_1.json in Resources */,
+				F480F80528F467C4005FA3AB /* fetch_comments_1.json in Resources */,
 				F4DDA09F28EFF5320031EA96 /* fetch_posts_1.json in Resources */,
 				F4DDA07D28EFDEE20031EA96 /* fetch_tag_1.json in Resources */,
 				F442F57128F3975400B1928F /* fetch_media_1.json in Resources */,
+				F480F80428F467C4005FA3AB /* fetch_comment_1.json in Resources */,
 				F4DDA07C28EFDEE20031EA96 /* fetch_tags_1.json in Resources */,
 				F4839E1228EE669F00ED86C5 /* fetch_category_1.json in Resources */,
 				F442F57228F3975400B1928F /* fetch_medias_1.json in Resources */,
@@ -525,12 +576,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WordPressSimplify_Example/Pods-WordPressSimplify_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/UIScrollView-InfiniteScroll/UIScrollView_InfiniteScroll.framework",
 				"${BUILT_PRODUCTS_DIR}/WordPressSimplify/WordPressSimplify.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIScrollView_InfiniteScroll.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WordPressSimplify.framework",
 			);
@@ -607,18 +660,27 @@
 				F4B00A2628EA8B9900DE51A4 /* WPUserRequestFieldTest.swift in Sources */,
 				F4B00A2428EA8B9900DE51A4 /* WPCustomUserModel.swift in Sources */,
 				F442F57928F3A0C800B1928F /* WPCustomMediaModel.swift in Sources */,
+				F480F7FF28F46567005FA3AB /* WPCommentRequestFieldTest.swift in Sources */,
+				F480F80A28F4B11A005FA3AB /* WordPressSimplifyTests_Categories.swift in Sources */,
+				F4624EB228F4B7BD0020B615 /* WordPressSimplifyTests_Comments.swift in Sources */,
 				F4839E1728EE67E100ED86C5 /* WPCategoryRequestFiltersTest.swift in Sources */,
 				F4DDA06428EFCEA80031EA96 /* WPCustomCategoryModel.swift in Sources */,
 				F4DDA09B28EFF4A40031EA96 /* WPPostRequestFieldTest.swift in Sources */,
 				F4839E1528EE67CE00ED86C5 /* WPCategoryRequestFieldTest.swift in Sources */,
 				F4DDA0B528F00DD00031EA96 /* WPCustomPageModel.swift in Sources */,
+				F480F80C28F4B151005FA3AB /* WordPressSimplifyTests_Tags.swift in Sources */,
 				F4DDA07728EFDDAC0031EA96 /* WPTagRequestFieldTest.swift in Sources */,
+				F405811828F4B57A00C7666D /* WordPressSimplifyTests_Posts.swift in Sources */,
+				F480F80128F46576005FA3AB /* WPCommentRequestFiltersTest.swift in Sources */,
 				F4DDA0AD28F009300031EA96 /* WPPageRequestFiltersTest.swift in Sources */,
 				F4B00A2528EA8B9900DE51A4 /* ArrayExtensionTest.swift in Sources */,
+				F405811A28F4B5A000C7666D /* WordPressSimplifyTests_Pages.swift in Sources */,
+				F4624EB028F4B7970020B615 /* WordPressSimplifyTests_Media.swift in Sources */,
+				F480F80728F46AA2005FA3AB /* WPCustomCommentModel.swift in Sources */,
 				F4B00A2128EA8B9900DE51A4 /* WPNetworkingClientMock.swift in Sources */,
 				F4B00A2728EA8B9900DE51A4 /* WPUserRequestFiltersTest.swift in Sources */,
 				F4DDA07928EFDDB70031EA96 /* WPTagRequestFiltersTest.swift in Sources */,
-				F4B00A2028EA8B9900DE51A4 /* WordPressSimplifyTests.swift in Sources */,
+				F4B00A2028EA8B9900DE51A4 /* WordPressSimplifyTests_Users.swift in Sources */,
 				F4B00A1F28EA8B9900DE51A4 /* WPNetworkingTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

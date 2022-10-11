@@ -21,4 +21,5 @@ struct WPCustomUserModel: WPUserModel {
     let locale: String?
     let nickname: String?
     let slug: String?
+    let avatar_urls: WPAvatarURLS?
 }
