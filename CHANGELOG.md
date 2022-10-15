@@ -1,5 +1,7 @@
 # WordPressSimplify
 
+## 1.3.0
+- [TR12 - Implement Post Related Information Logic](https://trello.com/c/OjUWifwT/12-post-related-information)
 ## 1.2.0
 
 - [TR10 - Implement Comments Logic](https://trello.com/c/k9hrpu6n/10-comments)

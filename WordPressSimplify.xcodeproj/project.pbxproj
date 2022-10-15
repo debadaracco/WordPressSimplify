@@ -130,6 +130,7 @@
 		F4B00A2928EA8BD100DE51A4 /* ListItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemsViewController.swift; sourceTree = "<group>"; };
 		F4B652AF28FAFB32000D5A7F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F4B652B128FAFFF1000D5A7F /* WordPressSimplifyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPressSimplifyManager.swift; sourceTree = "<group>"; };
+		F4B652B328FB69F6000D5A7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		F4DA24AD28ED249A00BC93EA /* .codecov.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .codecov.yml; sourceTree = "<group>"; };
 		F4DDA06328EFCEA80031EA96 /* WPCustomCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCustomCategoryModel.swift; sourceTree = "<group>"; };
 		F4DDA07128EFDD2F0031EA96 /* WPCustomTagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCustomTagModel.swift; sourceTree = "<group>"; };
@@ -263,6 +264,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				F4B652B328FB69F6000D5A7F /* CHANGELOG.md */,
 				643101BD6E5A7FCDBAC0953D /* WordPressSimplify.podspec */,
 				B691003CAC2F52C81A417561 /* README.md */,
 				5E15FD797FF1CFE12314ADD3 /* LICENSE */,
