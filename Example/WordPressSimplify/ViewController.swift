@@ -8,9 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    fileprivate let elements = DetailViewController.WPType.allCases
+    fileprivate let elements = WPType.allCases
 
-    fileprivate var selectedRestClient = DetailViewController.RestClients.´default´
+    fileprivate var selectedRestClient = WordPressSimplifyManager.RestClients.´default´
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var baseURLTextField: UITextField!
@@ -26,17 +26,17 @@ class ViewController: UIViewController {
         super.prepare(for: segue, sender: sender)
 
         if segue.identifier == "DetailSegueStoryboard" {
-            let detail = segue.destination as! DetailViewController
-            detail.baseURL = self.baseURLTextField.text!
+            let detail = segue.destination as! ListItemsViewController
+            WordPressSimplifyManager.shared.baseURL = self.baseURLTextField.text!
 
-            if let sender = sender as? DetailViewController.WPType {
+            if let sender = sender as? WPType {
                 detail.wpType = sender
-                detail.restClient = self.selectedRestClient
+                WordPressSimplifyManager.shared.restClient = self.selectedRestClient
             }
         }
     }
 
-    func validateData(_ element: DetailViewController.WPType) -> Bool {
+    func validateData(_ element: WPType) -> Bool {
         guard let text = self.baseURLTextField.text else {
             showBaseURLAlert()
             return false
@@ -100,5 +100,13 @@ extension ViewController: UITableViewDelegate {
         if self.validateData(element) {
             self.performSegue(withIdentifier: "DetailSegueStoryboard", sender: element)
         }
+    }
+}
+
+extension UIViewController {
+    func showError(_ error: Error) {
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        self.present(alert, animated: true)
     }
 }

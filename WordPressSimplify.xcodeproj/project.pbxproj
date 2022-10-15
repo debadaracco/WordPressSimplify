@@ -43,7 +43,9 @@
 		F4B00A2528EA8B9900DE51A4 /* ArrayExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1A28EA8B9900DE51A4 /* ArrayExtensionTest.swift */; };
 		F4B00A2628EA8B9900DE51A4 /* WPUserRequestFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1C28EA8B9900DE51A4 /* WPUserRequestFieldTest.swift */; };
 		F4B00A2728EA8B9900DE51A4 /* WPUserRequestFiltersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A1D28EA8B9900DE51A4 /* WPUserRequestFiltersTest.swift */; };
-		F4B00A2A28EA8BD100DE51A4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A2928EA8BD100DE51A4 /* DetailViewController.swift */; };
+		F4B00A2A28EA8BD100DE51A4 /* ListItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B00A2928EA8BD100DE51A4 /* ListItemsViewController.swift */; };
+		F4B652B028FAFB32000D5A7F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B652AF28FAFB32000D5A7F /* DetailViewController.swift */; };
+		F4B652B228FAFFF1000D5A7F /* WordPressSimplifyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B652B128FAFFF1000D5A7F /* WordPressSimplifyManager.swift */; };
 		F4DDA06428EFCEA80031EA96 /* WPCustomCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDA06328EFCEA80031EA96 /* WPCustomCategoryModel.swift */; };
 		F4DDA07228EFDD2F0031EA96 /* WPCustomTagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDA07128EFDD2F0031EA96 /* WPCustomTagModel.swift */; };
 		F4DDA07728EFDDAC0031EA96 /* WPTagRequestFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDA07628EFDDAC0031EA96 /* WPTagRequestFieldTest.swift */; };
@@ -125,7 +127,10 @@
 		F4B00A1A28EA8B9900DE51A4 /* ArrayExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTest.swift; sourceTree = "<group>"; };
 		F4B00A1C28EA8B9900DE51A4 /* WPUserRequestFieldTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPUserRequestFieldTest.swift; sourceTree = "<group>"; };
 		F4B00A1D28EA8B9900DE51A4 /* WPUserRequestFiltersTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPUserRequestFiltersTest.swift; sourceTree = "<group>"; };
-		F4B00A2928EA8BD100DE51A4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F4B00A2928EA8BD100DE51A4 /* ListItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemsViewController.swift; sourceTree = "<group>"; };
+		F4B652AF28FAFB32000D5A7F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F4B652B128FAFFF1000D5A7F /* WordPressSimplifyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPressSimplifyManager.swift; sourceTree = "<group>"; };
+		F4B652B328FB69F6000D5A7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		F4DA24AD28ED249A00BC93EA /* .codecov.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .codecov.yml; sourceTree = "<group>"; };
 		F4DDA06328EFCEA80031EA96 /* WPCustomCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCustomCategoryModel.swift; sourceTree = "<group>"; };
 		F4DDA07128EFDD2F0031EA96 /* WPCustomTagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPCustomTagModel.swift; sourceTree = "<group>"; };
@@ -202,7 +207,7 @@
 		607FACD21AFB9204008FA782 /* Example for WordPressSimplify */ = {
 			isa = PBXGroup;
 			children = (
-				F4B00A2928EA8BD100DE51A4 /* DetailViewController.swift */,
+				F4B00A2928EA8BD100DE51A4 /* ListItemsViewController.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -210,6 +215,8 @@
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				F4EFE1D728F01B9E002893C4 /* AlamofireNetworking.swift */,
+				F4B652AF28FAFB32000D5A7F /* DetailViewController.swift */,
+				F4B652B128FAFFF1000D5A7F /* WordPressSimplifyManager.swift */,
 			);
 			name = "Example for WordPressSimplify";
 			path = Example/WordPressSimplify;
@@ -257,6 +264,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				F4B652B328FB69F6000D5A7F /* CHANGELOG.md */,
 				643101BD6E5A7FCDBAC0953D /* WordPressSimplify.podspec */,
 				B691003CAC2F52C81A417561 /* README.md */,
 				5E15FD797FF1CFE12314ADD3 /* LICENSE */,
@@ -641,8 +649,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4EFE1D828F01B9E002893C4 /* AlamofireNetworking.swift in Sources */,
-				F4B00A2A28EA8BD100DE51A4 /* DetailViewController.swift in Sources */,
+				F4B00A2A28EA8BD100DE51A4 /* ListItemsViewController.swift in Sources */,
+				F4B652B028FAFB32000D5A7F /* DetailViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				F4B652B228FAFFF1000D5A7F /* WordPressSimplifyManager.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
