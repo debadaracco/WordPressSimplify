@@ -7,6 +7,7 @@
 
 import Foundation
 
+// swiftlint:disable cyclomatic_complexity file_length function_body_length
 public class WordPressSimplify {
     fileprivate let wpUserRepository: WPUserRepositoryProtocol
     fileprivate let wpCategoryRepository: WPCategoryRepositoryProtocol
@@ -15,6 +16,11 @@ public class WordPressSimplify {
     fileprivate let wpPageRepository: WPPageRepositoryProtocol
     fileprivate let wpMediaRepository: WPMediaRepositoryProtocol
     fileprivate let wpCommentRepository: WPCommentRepositoryProtocol
+    fileprivate let wpQueue = DispatchQueue(
+        label: "ar.com.WordPressSimplify.queue",
+        qos: .utility,
+        attributes: .concurrent
+    )
 
     public init(
         baseURL: String,
@@ -379,6 +385,174 @@ extension WordPressSimplify {
             id: id,
             fields: fields,
             completion: completion
+        )
+    }
+}
+
+// MARK: - Post Related Information
+extension WordPressSimplify {
+    public enum PostRelated: CaseIterable {
+        public static var allCases: [WordPressSimplify.PostRelated] {
+            return [
+                .author(fields: []),
+                .categories(fields: []),
+                .comments(fields: []),
+                .media(fields: []),
+                .tags(fields: [])
+            ]
+        }
+        case author(fields: [WPRequestField.UserFields])
+        case categories(fields: [WPRequestField.CategoryFields])
+        case comments(fields: [WPRequestField.CommentFields])
+        case media(fields: [WPRequestField.MediaFields])
+        case tags(fields: [WPRequestField.TagFields])
+    }
+
+    public func fetchRelated(
+        for post: WPPostModel,
+        ask related: [PostRelated] = PostRelated.allCases,
+        completion: @escaping (Result<WPSPostRelated, Error>) -> Void
+    ) {
+        let group = DispatchGroup()
+
+        var author: WPUserModel?
+        var imageMedia: (any WPMediaModel)?
+        var postTags: [WPTagModel]?
+        var postComments: [WPCommentModel]?
+        var postCategories: [WPCategoryModel]?
+
+        related.forEach { related in
+
+            switch related {
+            case .author(fields: let fields):
+
+                if let authorId = post.author {
+                    group.enter()
+
+                    self.wpQueue.async(
+                        group: group,
+                        execute: DispatchWorkItem {
+                            self.fetchUser(
+                                id: authorId,
+                                fields: fields
+                            ) { result in
+                                switch result {
+                                case .success(let user):
+                                    author = user
+                                default:
+                                    break
+                                }
+                                group.leave()
+                            }
+                        }
+                    )
+                }
+            case .categories(fields: let fields):
+                if let postId = post.id {
+                    group.enter()
+                    self.wpQueue.async(
+                        group: group,
+                        execute: DispatchWorkItem {
+                            self.fetchCategories(
+                                filters: [
+                                    .post(value: postId)
+                                ],
+                                fields: fields
+                            ) { result in
+                                switch result {
+                                case .success(let categories):
+                                    postCategories = categories
+                                default:
+                                    break
+                                }
+                                group.leave()
+                            }
+                        }
+                    )
+                }
+            case .comments(fields: let fields):
+                if let postId = post.id {
+                    group.enter()
+                    self.wpQueue.async(
+                        group: group,
+                        execute: DispatchWorkItem {
+                            self.fetchComments(
+                                filters: [
+                                    .post(id: postId)
+                                ],
+                                fields: fields
+                            ) { result in
+                                switch result {
+                                case .success(let comments):
+                                    postComments = comments
+                                default:
+                                    break
+                                }
+                                group.leave()
+                            }
+                        }
+                    )
+                }
+            case .media(fields: let fields):
+                if let mediaId = post.featured_media {
+                    group.enter()
+                    self.wpQueue.async(
+                        group: group,
+                        execute: DispatchWorkItem {
+                            self.fetchMedia(
+                                id: mediaId,
+                                fields: fields
+                            ) { result in
+                                switch result {
+                                case .success(let media):
+                                    imageMedia = media
+                                default:
+                                    break
+                                }
+                                group.leave()
+                            }
+                        }
+                    )
+                }
+            case .tags(fields: let fields):
+                if let postId = post.id {
+                    group.enter()
+                    self.wpQueue.async(
+                        group: group,
+                        execute: DispatchWorkItem {
+                            self.fetchTags(
+                                filters: [
+                                    .post(value: postId)
+                                ],
+                                fields: fields
+                            ) { result in
+                                switch result {
+                                case .success(let tags):
+                                    postTags = tags
+                                default:
+                                    break
+                                }
+                                group.leave()
+                            }
+                        }
+                    )
+                }
+            }
+        }
+
+        group.notify(
+            queue: .main,
+            work: DispatchWorkItem {
+                let postRelated = WPSPostRelated(
+                    post: post,
+                    user: author,
+                    media: imageMedia,
+                    tags: postTags,
+                    comments: postComments,
+                    categories: postCategories
+                )
+                completion(.success(postRelated))
+            }
         )
     }
 }
